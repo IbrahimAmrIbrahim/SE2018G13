@@ -23,7 +23,43 @@
         <link href="./css/simple-sidebar.css" rel="stylesheet">
     </head>
     <body>
+         <div id="wrapper">
+             
+             
+                <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            Start Bootstrap
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#">Shortcuts</a>
+                    </li>
+                    <li>
+                        <a href="#">Overview</a>
+                    </li>
+                    <li>
+                        <a href="#">Events</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> 
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
@@ -79,5 +115,23 @@
             <input type="submit" class="btn-dark" value="Forget My Password!!!" />
         </div>
         </div>
+             
+         </div>
+        
+        
+        
+        
+        
+          <script src="./style/Jquery/jquery.min.js"></script>
+        <script src="./style/Js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
+
+
+<script>   
+$("#menu-toggle").click(function (e) {
+                e.preventDefault();
+                $("#wrapper").toggleClass("toggled");
+            });
+                    
+</script>
