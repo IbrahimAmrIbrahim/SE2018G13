@@ -1,3 +1,5 @@
+
+
 <?php
 include_once('./controllers/common.php');
 include_once('./components/head.php');
@@ -5,26 +7,62 @@ include_once('./models/student.php');
 include_once('./models/grade.php');
 Database::DBConnect();
 ?>
+    
+    
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+
+        <title>Simple Sidebar - Start Bootstrap Template</title>
+
+        
+             <!-- Bootstrap core CSS -->
+        <link href="../style/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../css/logo-nav.css" rel="stylesheet">
+        
+        
+        <!-- Bootstrap core CSS -->
+        <link href="../style/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+    </head>
+    
 <body>    
-    <div class="wrapper" >
-      <div id="sidebar-wrapper">
+    <div id="wrapper" >
+       <!-- Sidebar -->
+       <div>
+            <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
+                    
                     <li class="sidebar-brand">
                         <a href="#">
-                            Start Bootstrap
+                           Teacher
                         </a>
                     </li>
+                    
                     <li>
-                        <a href="#">Dashboard</a>
+                        <a href="./courses.php">Courses</a>
                     </li>
                     <li>
-                        <a href="#">Shortcuts</a>
+                        <a href="#">Time Table</a>
                     </li>
                     <li>
-                        <a href="#">Overview</a>
+                        <a href="./students.php">Students  </a>
                     </li>
                     <li>
-                        <a href="#">Events</a>
+                        <a href="">files</a>
                     </li>
                     <li>
                         <a href="#">About</a>
@@ -37,7 +75,7 @@ Database::DBConnect();
                     </li>
                 </ul>
             </div>
-    
+            <!-- /#sidebar-wrapper -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> 
                 <div class="container">
@@ -54,20 +92,19 @@ Database::DBConnect();
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
+                          
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
+                                <a class="nav-link" href="../index.php">Sign Out</a>
                             </li>
 
                         </ul>
                     </div>
                 </div>
             </nav>
-   
+       </div>
     <!-- Begin page content -->
     <main role="main" class="container">
+           <div id="page-content-wrapper">
         <h2 class="mt-5">Students</h2>
 
         <div>
@@ -161,12 +198,14 @@ Database::DBConnect();
                 <?php } ?>
             </tbody>
         </table>
+           </div>
     </div>
-    
+  
         <?php include_once('./components/tail.php') ?>
 
+
         
-        
+
         
         <script type="text/javascript">
             $(document).ready(function () {

@@ -87,10 +87,12 @@
             </nav>
             <div >
                 <div >
-                    <table class=" table-bordered  table-dark">
-                        <tr>
+                    
+                    
+                    <table class=" table-bordered" style="margin-top: 20px" style="background-color: orange">
+                        <tr style="background-color: orange">
                             <td>
-                                <p>user name </p>
+                                <p >user name </p>
 
                             </td>
                             <td>
@@ -98,7 +100,7 @@
                             </td>
                         </tr>
 
-                        <tr>
+                        <tr style="background-color: orange">
                             <td>
                                 <p>password </p>
 

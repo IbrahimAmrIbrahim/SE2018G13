@@ -1,3 +1,4 @@
+<html>
 <?php
 include_once('./controllers/common.php');
 include_once('./components/head.php');
@@ -6,10 +7,72 @@ include_once('./models/grade.php');
 Database::DBConnect();
 ?>
 
+ <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+
+        <title>Simple Sidebar - Start Bootstrap Template</title>
+
+        
+             <!-- Bootstrap core CSS -->
+        <link href="../style/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../css/logo-nav.css" rel="stylesheet">
+        
+        
+        <!-- Bootstrap core CSS -->
+        <link href="../style/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+    </head>
 <body>    
-    <header>
-        <!-- Fixed navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    
+    <div id='wrapper'>
+        <div>
+       <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li class="sidebar-brand">
+                        <a href="#">
+                           Teacher
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./courses.php">Courses</a>
+                    </li>
+                    <li>
+                        <a href="#">Time Table</a>
+                    </li>
+                    <li>
+                        <a href="./students.php">Students  </a>
+                    </li>
+                    <li>
+                        <a href="">files</a>
+                    </li>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> 
                 <div class="container">
                     <a class="navbar-brand" href="#">
@@ -25,21 +88,19 @@ Database::DBConnect();
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
+                          
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Services</a>
+                                <a class="nav-link" href="../index.php">Sign Out</a>
                             </li>
 
                         </ul>
                     </div>
                 </div>
             </nav>
-    </header>
+        </div>
     <!-- Begin page content -->
     <main role="main" class="container">
-
+  <div id="page-content-wrapper">
         <h2 class="mt-5">Courses</h2>
 
         <div>
@@ -141,6 +202,9 @@ Database::DBConnect();
                 <?php } ?>
             </tbody>
         </table>
+  </div>
+    </div>
+    
 
         <?php include_once('./components/tail.php') ?>
 
@@ -390,4 +454,17 @@ Database::DBConnect();
                         })
             }
 
-        </script>    
+        </script>   
+         <script src="../style/Jquery/jquery.min.js"></script>
+        <script src="../style/Js/bootstrap.bundle.min.js"></script>
+        <script>
+            
+            
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+
+    
+</script>
