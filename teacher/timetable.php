@@ -161,7 +161,7 @@ Database::DBConnect();
         </div>
     </body>
 </html>
-
+ <?php include_once('./components/tail.php') ?>
 
     <script type="text/javascript">
             $(document).ready(function () {

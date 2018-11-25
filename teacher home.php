@@ -117,7 +117,7 @@ $info=safeGet("get");
 
         <!-- Page Content -->
         <div class="container">
-            <h1 class="mt-5">Wrlcome Teacher : NAME  </h1>
+            <h1 class="mt-5">Welcome Teacher : NAME  </h1>
             <p> </p>
         </div>
         <!-- /.container -->

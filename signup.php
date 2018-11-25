@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-
+<link rel="stylesheet" href="./css/signup.css">
         <title>sign up </title>
         <link href="./style/bootstrap/bootstrap.min.css" rel="stylesheet">
 
@@ -213,6 +213,17 @@
                                     <input type="checkbox" onclick="myFunction2()" >
                                 </td>
                             </tr>
+                            
+                            <tr>
+                                <td>
+                                     <form action="./index.php" method="post">
+                        <input    type="submit" value="submit"  /> 
+                        </form>
+                                <td>
+                                    
+                                </td>
+                                </td>
+</tr>
 
 
 
@@ -223,9 +234,7 @@
 
                     </div>
                     <div>   
-                        <form action="./index.php" method="post">
-                        <input    type="submit" value="submit"  /> 
-                        </form>
+                       
                     </div>
 
 

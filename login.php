@@ -11,7 +11,7 @@
 
         <title>log in </title>
         <link href="./style/bootstrap/bootstrap.min.css" rel="stylesheet">
-
+<link rel="stylesheet" href="./css/signup.css">
         <!-- Custom styles for this template -->
         <link href="./css/logo-nav.css" rel="stylesheet">
 
@@ -90,7 +90,7 @@
                     
                     
                     <table class=" table-bordered" style="margin-top: 20px" style="background-color: orange">
-                        <tr style="background-color: orange">
+                        <tr >
                             <td>
                                 <p >user name </p>
 
@@ -100,25 +100,37 @@
                             </td>
                         </tr>
 
-                        <tr style="background-color: orange">
+                        <tr >
                             <td>
-                                <p>password </p>
+                                <p > password </p>
 
                             </td>
                             <td>
                                 <input type ="password"  value="" name ="" >
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <div class=" btn-block btn-toolbar">   
+                    <form action="teacher home.php" method="post" >
+                    <input type="submit"   id="3" value="Log in "  />
+                    
+                   
+                    <input type="submit" value="Forget My Password!" />
+                   
+                     </form>
+                </div>
+                            </td>
+                            <td>
+                                <form action="signup.php" method="post" >
+                                <input type="submit" value="Sign Up"  />
+                                 </form>
+                            </td>
+                        </tr>
                     </table>
                 </div>
 
-                <div class=" btn-block btn-toolbar">   
-                    <form action="teacher home.php" method="post" >
-                    <input type="submit" class="btn-dark login"  id="3" value="Log in " />
-                    
-                    </form>
-                    <input type="submit" class="btn-dark" value="Forget My Password!!!" />
-                </div>
+                
             </div>
 
         </div>

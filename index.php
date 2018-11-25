@@ -119,8 +119,9 @@ $info=safeGet("get");
 
         <!-- Page Content -->
         <div class="container">
-            <h1 class="mt-5">Logo Nav by Start Bootstrap</h1>
-            <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.</p>
+            <h1 class="mt-5"> Welcome everyone to our site </h1>
+            <p>it's for study and mange your time and ofcourse for ads $$$ </p>
+            <p>We hope you find it helpful</p>
         </div>
         <!-- /.container -->
 
