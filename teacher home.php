@@ -49,20 +49,20 @@ $info=safeGet("get");
                 <ul class="sidebar-nav">
                     <li class="sidebar-brand">
                         <a href="#">
-                            Start Bootstrap
+                           Teacher
                         </a>
                     </li>
                     <li>
-                        <a href="#">Dashboard</a>
+                        <a href="teacher/courses.php">Courses</a>
                     </li>
                     <li>
-                        <a href="#">Shortcuts</a>
+                        <a href="#">Time Table</a>
                     </li>
                     <li>
-                        <a href="#">Overview</a>
+                        <a href="teacher/students.php">Students  </a>
                     </li>
                     <li>
-                        <a href="#">Events</a>
+                        <a href="">files</a>
                     </li>
                     <li>
                         <a href="#">About</a>
@@ -98,18 +98,16 @@ $info=safeGet("get");
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Home
+                            <a class="nav-link" href="./teacher home.php">Home
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="./signup.php">Sign UP</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./login.php">Sign in </a>
+                            <a class="nav-link" href="index.php">Sign Out</a>
                         </li>
                       
                     </ul>
@@ -119,8 +117,8 @@ $info=safeGet("get");
 
         <!-- Page Content -->
         <div class="container">
-            <h1 class="mt-5">Logo Nav by Start Bootstrap</h1>
-            <p>The logo in the navbar is now a default Bootstrap feature in Bootstrap 4! Make sure to set the width and height of the logo within the HTML. For best results, it's recommended that you use an SVG image as your logo.</p>
+            <h1 class="mt-5">Wrlcome Teacher : NAME  </h1>
+            <p> </p>
         </div>
         <!-- /.container -->
 
