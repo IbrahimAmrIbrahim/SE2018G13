@@ -90,7 +90,7 @@
                     
                     
                     <table class=" table-bordered" style="margin-top: 20px" style="background-color: orange">
-                        <tr style="background-color: orange">
+                        <tr >
                             <td>
                                 <p >user name </p>
 
@@ -100,7 +100,7 @@
                             </td>
                         </tr>
 
-                        <tr style="background-color: orange">
+                        <tr >
                             <td>
                                 <p>password </p>
 
@@ -114,10 +114,11 @@
 
                 <div class=" btn-block btn-toolbar">   
                     <form action="teacher home.php" method="post" >
-                    <input type="submit" class="btn-dark login"  id="3" value="Log in " />
+                    <input type="submit"   id="3" value="Log in " />
                     
-                    </form>
-                    <input type="submit" class="btn-dark" value="Forget My Password!!!" />
+                   
+                    <input type="submit" value="Forget My Password!" />
+                     </form>
                 </div>
             </div>
 
