@@ -1,15 +1,13 @@
-
-
-<?php
+<html>
+    <?php
 include_once('./controllers/common.php');
 include_once('./components/head.php');
-include_once('./models/student.php');
+include_once('./models/Courses.php');
+include_once('./models/Student.php');
 include_once('./models/grade.php');
 Database::DBConnect();
 ?>
-    
-    
-    <head>
+   <head>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -39,24 +37,22 @@ Database::DBConnect();
 
     </head>
     
-<body>    
-    <div id="wrapper" >
+    <body>
+        <div id="wrapper" >
+           <div>
        <!-- Sidebar -->
-       <div>
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
-                    
                     <li class="sidebar-brand">
                         <a href="#">
                            Teacher
                         </a>
                     </li>
-                    
                     <li>
                         <a href="./courses.php">Courses</a>
                     </li>
                     <li>
-                        <a href="./timetable.php">Time Table</a>
+                        <a href="#">Time Table</a>
                     </li>
                     <li>
                         <a href="./students.php">Students  </a>
@@ -101,113 +97,73 @@ Database::DBConnect();
                     </div>
                 </div>
             </nav>
-       </div>
-    <!-- Begin page content -->
-    <main role="main" class="container">
-           <div id="page-content-wrapper">
-        <h2 class="mt-5">Students</h2>
-
-        <div>
-            <form action="./students.php" class="form-inline">
-                <div class="input-group" style="width: 100%">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-search"></i></span>
-                    </div>
-                    <input class="form-control" id="SearchBox" type="text" name="keywords" placeholder="Search" aria-label="Search" value="<?= safeGet('keywords') ?>">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </div>
-                </div>
-            </form>
         </div>
-        <table class="table" style="margin-top: 20px">
+            
+            <div id="page-content-wrapper">
+                
+                
+                <div>
+                    <table class="table" style="margin-top: 20px">
             <thead>
                 <tr id="StudentTable_th">
-                    <th scope="col">Student ID
+                    <th scope="col">Time Table ID
                         <button class="button idSortbtn"><i class="fas fa-sort-amount-up idSort"></i></button>
                     </th>
-                    <th scope="col">Student Name
+                    <th scope="col">Date
                         <button class="button nameSortbtn"><i class="fas fa-random nameSort"></i></button>
                     </th>
-                    <th scope="col"  style="padding-bottom: 18px">Grade</th>
-                    <th scope="col"><button class="button float-right edit_student" id="0">Add Student</button></th>
+                    <th scope="col"  style="padding-bottom: 18px">Event</th>
+                    <th scope="col"><button class="button float-right edit_student" id="0">Add Event</button></th>
                 </tr>
             </thead>
-            <tbody>
-                <?php
-                $students = Student::all(safeGet('keywords'), NULL, NULL);
-                $num = 0;
-                foreach ($students as $student) {
-                    $num = $num + 1;
-                    ?>
-                    <tr id="StudentTable_tr" class="stdRow<?= $num ?>">
-                        <td class="stdID<?= $num ?>"><?= $student->id ?></td>
-                        <td class="stdName<?= $num ?>"><?= $student->name ?></td>
-                        <td>
-                            <button class="button show_grade stdGrade<?= $num ?>" id="<?= $student->id ?>">Show</button>
-                        </td>
-                        <td>
-                            <button class="button edit_student stdEdit<?= $num ?>" id="<?= $student->id ?>">Edit</button>&nbsp;
-                            <button class="button delete_student stdDelete<?= $num ?>" id="<?= $student->id ?>">Delete</button>
-                        </td>
-                    </tr>
-                    <tr id="grade<?= $student->id ?>" style="display: none">
-                        <td colspan="4">
-                            <table class="table">
-                                <thead>
-                                    <tr id="GardeTable_th">
-                                        <th scope="col">Course ID
-                                            <button class="button crsIDSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-sort-amount-up <?= $student->id ?>crsIDSort"></i></button>
-                                        </th>
-                                        <th scope="col">Course Name
-                                            <button class="button crsNameSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-random <?= $student->id ?>crsNameSort"></i></button>
-                                        </th>
-                                        <th scope="col">Grade
-                                            <button class="button gradeSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-random <?= $student->id ?>gradeSort"></i></button>
-                                        </th>
-                                        <th scope="col">Max Grade</th>
-                                        <th scope="col">Examine Date
-                                            <button class="button examineatSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-random <?= $student->id ?>examineatSort"></i></button>
-                                        </th>
-                                        <th scope="col"><button class="button float-right add_Courses" id="<?= $student->id ?>">Assign Courses</button></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $grades = Grade::std_all($student->id, NULL, NULL);
-                                    $gradenum = 0;
-                                    foreach ($grades as $grade) {
-                                        $gradenum = $gradenum + 1;
-                                        ?>
-                                        <tr id="GardeTable_tr">
-                                            <td class="<?= $student->id ?>gradeCrsID<?= $gradenum ?>"><?= $grade->course_id ?></td>
-                                            <td class="<?= $student->id ?>gradeCrsName<?= $gradenum ?>"><?= $grade->crs_name ?></td>
-                                            <td class="<?= $student->id ?>gradeDegree<?= $gradenum ?>"><?= $grade->degree ?></td>
-                                            <td class="<?= $student->id ?>gradeMaxDegree<?= $gradenum ?>"><?= $grade->max_degree ?></td>
-                                            <td class="<?= $student->id ?>gradeExamineAt<?= $gradenum ?>"><?= $grade->examine_at ?></td>
-                                            <td>
-                                                <button class="button edit_grade <?= $student->id ?>gradeEdit<?= $gradenum ?>"  id="<?= $grade->id ?>">Edit</button>&nbsp;
-                                                <button class="button delete_grade <?= $student->id ?>gradeDelete<?= $gradenum ?>" id="<?= $grade->id ?>">Delete</button>
-                                            </td>
-                                        </tr>
-                                    <?php } ?>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                <?php } ?>
-            </tbody>
+            <tr id="StudentTable_tr">
+                <td>
+                    
+                </td>
+                
+                 <td>
+                    
+                </td>
+                 <td>
+                    
+                </td>
+                 <td>
+                   
+                </td>
+            </tr>
+            
         </table>
-           </div>
-    </div>
-  
-        <?php include_once('./components/tail.php') ?>
+                    
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>
+    </body>
+</html>
 
 
-        
-
-        
-        <script type="text/javascript">
+    <script type="text/javascript">
             $(document).ready(function () {
                 $('.edit_student').click(function (event) {
                     window.location.href = "editstudent.php?id=" + $(this).attr('id');
@@ -432,8 +388,9 @@ Database::DBConnect();
             }
         </script>
 
-        
-        <script src="../style/Jquery/jquery.min.js"></script>
+
+ </script>   
+         <script src="../style/Jquery/jquery.min.js"></script>
         <script src="../style/Js/bootstrap.bundle.min.js"></script>
         <script>
             

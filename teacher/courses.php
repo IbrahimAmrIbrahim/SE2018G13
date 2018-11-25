@@ -52,7 +52,7 @@ Database::DBConnect();
                         <a href="./courses.php">Courses</a>
                     </li>
                     <li>
-                        <a href="#">Time Table</a>
+                        <a href="./timetable.php">Time Table</a>
                     </li>
                     <li>
                         <a href="./students.php">Students  </a>
