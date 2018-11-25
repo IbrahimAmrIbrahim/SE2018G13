@@ -56,7 +56,7 @@ $info=safeGet("get");
                         <a href="teacher/courses.php">Courses</a>
                     </li>
                     <li>
-                        <a href="#">Time Table</a>
+                        <a href="teacher/timetable.php">Time Table</a>
                     </li>
                     <li>
                         <a href="teacher/students.php">Students  </a>
