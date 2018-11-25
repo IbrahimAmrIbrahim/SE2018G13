@@ -1,0 +1,25 @@
+table{
+    margin:100px auto;
+    padding:20px;
+    border:2px solid #EE7E32;
+}
+table tr{
+    background-color:#fbe4d6;
+    border:1px solid #fff;
+}
+table tr td{ 
+    padding:10px;
+    width:300px;
+    font-size:110%;   
+}
+table tr td p{
+    font-family: "Arial Black", Gadget, sans-serif;
+    color:#000;
+}
+table tr td input{
+    width:90%;
+    border:1px solid #000;
+}
+table tr td input[type="checkbox"]{
+    width:5%;
+}
