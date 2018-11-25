@@ -223,7 +223,7 @@
 
                     </div>
                     <div>   
-                        <form class="in" >
+                        <form action="./index.php" method="post">
                         <input    type="submit" value="submit"  /> 
                         </form>
                     </div>
@@ -279,9 +279,7 @@
     
     
     
-       $('.in').click(function (event) {
-                    window.location.href = "index.php";
-                });
+    
 
 </script>
 <script src="./style/Jquery/jquery.min.js"></script>
