@@ -5,7 +5,7 @@ include_once('database.php');
 class Time extends Database {
 
     function __construct($id) {
-        $sql = "SELECT * FROM Time WHERE Id = $id;";
+        $sql = "SELECT * FROM timetable WHERE Id = $id;";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);

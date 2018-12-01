@@ -1,169 +1,122 @@
-<html>
-    <?php
+<!DOCTYPE html>
+<?php
 include_once('./controllers/common.php');
 include_once('./components/head.php');
-include_once('./models/Courses.php');
-include_once('./models/Student.php');
+include_once('./models/student.php');
 include_once('./models/grade.php');
 Database::DBConnect();
 ?>
-   <head>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
-
-        <title>Simple Sidebar - Start Bootstrap Template</title>
-
-        
-             <!-- Bootstrap core CSS -->
-        <link href="../style/bootstrap/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="../css/logo-nav.css" rel="stylesheet">
-        
-        
-        <!-- Bootstrap core CSS -->
-        <link href="../style/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="../css/simple-sidebar.css" rel="stylesheet">
-
+<html ln="eng">
+    <head>
+     <?php include_once './commons/head_tag.php';?>
+        <title>
+            LMS students
+        </title>
     </head>
     
     <body>
-        <div id="wrapper" >
-           <div>
-       <!-- Sidebar -->
-            <div id="sidebar-wrapper">
-                <ul class="sidebar-nav">
-                    <li class="sidebar-brand">
-                        <a href="#">
-                           Teacher
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./courses.php">Courses</a>
-                    </li>
-                    <li>
-                        <a href="#">Time Table</a>
-                    </li>
-                    <li>
-                        <a href="./students.php">Students  </a>
-                    </li>
-                    <li>
-                        <a href="">files</a>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#">Services</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /#sidebar-wrapper -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a> 
-                <div class="container">
-                    <a class="navbar-brand" href="#">
-                        <img src="http://placehold.it/300x60?text=Logo" width="150" height="30" alt="">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarResponsive">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="../teacher home.php">Home
-                                    <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                          
-                            <li class="nav-item">
-                                <a class="nav-link" href="../index.php">Sign Out</a>
-                            </li>
+         <?php include_once './commons/head_nav.php';?>
+         <div role="main" class="container">
+        <h2 class="mt-5">Students</h2>
 
-                        </ul>
+        <div>
+            <form action="./students.php" class="form-inline">
+                <div class="input-group" style="width: 100%">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input class="form-control" id="SearchBox" type="text" name="keywords" placeholder="Search" aria-label="Search" value="<?= safeGet('keywords') ?>">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </div>
                 </div>
-            </nav>
+            </form>
         </div>
-            
-            <div id="page-content-wrapper">
-                
-                
-                <div>
-                    <table class="table" style="margin-top: 20px">
+        <table class="table" style="margin-top: 20px">
             <thead>
                 <tr id="StudentTable_th">
-                    <th scope="col">Time Table ID
+                    <th scope="col">Student ID
                         <button class="button idSortbtn"><i class="fas fa-sort-amount-up idSort"></i></button>
                     </th>
-                    <th scope="col">Date
+                    <th scope="col">Student Name
                         <button class="button nameSortbtn"><i class="fas fa-random nameSort"></i></button>
                     </th>
-                    <th scope="col"  style="padding-bottom: 18px">Event</th>
-                    <th scope="col"><button class="button float-right edit_student" id="0">Add Event</button></th>
+                    <th scope="col"  style="padding-bottom: 18px">Grade</th>
+                    <th scope="col"><button class="button float-right edit_student" id="0">Add Student</button></th>
                 </tr>
             </thead>
-            <tr id="StudentTable_tr">
-                <td>
-                    
-                </td>
-                
-                 <td>
-                    
-                </td>
-                 <td>
-                    
-                </td>
-                 <td>
-                   
-                </td>
-            </tr>
-            
+            <tbody>
+                <?php
+                $students = Student::all(safeGet('keywords'), NULL, NULL);
+                $num = 0;
+                foreach ($students as $student) {
+                    $num = $num + 1;
+                    ?>
+                    <tr id="StudentTable_tr" class="stdRow<?= $num ?>">
+                        <td class="stdID<?= $num ?>"><?= $student->id ?></td>
+                        <td class="stdName<?= $num ?>"><?= $student->name ?></td>
+                        <td>
+                            <button class="button show_grade stdGrade<?= $num ?>" id="<?= $student->id ?>">Show</button>
+                        </td>
+                        <td>
+                            <button class="button edit_student stdEdit<?= $num ?>" id="<?= $student->id ?>">Edit</button>&nbsp;
+                            <button class="button delete_student stdDelete<?= $num ?>" id="<?= $student->id ?>">Delete</button>
+                        </td>
+                    </tr>
+                    <tr id="grade<?= $student->id ?>" style="display: none">
+                        <td colspan="4">
+                            <table class="table">
+                                <thead>
+                                    <tr id="GardeTable_th">
+                                        <th scope="col">Course ID
+                                            <button class="button crsIDSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-sort-amount-up <?= $student->id ?>crsIDSort"></i></button>
+                                        </th>
+                                        <th scope="col">Course Name
+                                            <button class="button crsNameSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-random <?= $student->id ?>crsNameSort"></i></button>
+                                        </th>
+                                        <th scope="col">Grade
+                                            <button class="button gradeSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-random <?= $student->id ?>gradeSort"></i></button>
+                                        </th>
+                                        <th scope="col">Max Grade</th>
+                                        <th scope="col">Examine Date
+                                            <button class="button examineatSortbtn" stdID="<?= $student->id ?>"><i class="fas fa-random <?= $student->id ?>examineatSort"></i></button>
+                                        </th>
+                                        <th scope="col"><button class="button float-right add_Courses" id="<?= $student->id ?>">Assign Courses</button></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $grades = Grade::std_all($student->id, NULL, NULL);
+                                    $gradenum = 0;
+                                    foreach ($grades as $grade) {
+                                        $gradenum = $gradenum + 1;
+                                        ?>
+                                        <tr id="GardeTable_tr">
+                                            <td class="<?= $student->id ?>gradeCrsID<?= $gradenum ?>"><?= $grade->course_id ?></td>
+                                            <td class="<?= $student->id ?>gradeCrsName<?= $gradenum ?>"><?= $grade->crs_name ?></td>
+                                            <td class="<?= $student->id ?>gradeDegree<?= $gradenum ?>"><?= $grade->degree ?></td>
+                                            <td class="<?= $student->id ?>gradeMaxDegree<?= $gradenum ?>"><?= $grade->max_degree ?></td>
+                                            <td class="<?= $student->id ?>gradeExamineAt<?= $gradenum ?>"><?= $grade->examine_at ?></td>
+                                            <td>
+                                                <button class="button edit_grade <?= $student->id ?>gradeEdit<?= $gradenum ?>"  id="<?= $grade->id ?>">Edit</button>&nbsp;
+                                                <button class="button delete_grade <?= $student->id ?>gradeDelete<?= $gradenum ?>" id="<?= $grade->id ?>">Delete</button>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
         </table>
-                    
-                    
-                    
-                    
-                    
-                </div>
-                
-                
-                
-            </div>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+           
         </div>
+         <?php include_once './commons/tail.php';?>
     </body>
 </html>
- <?php include_once('./components/tail.php') ?>
 
-    <script type="text/javascript">
+ <script type="text/javascript">
             $(document).ready(function () {
                 $('.edit_student').click(function (event) {
                     window.location.href = "editstudent.php?id=" + $(this).attr('id');
@@ -387,19 +340,3 @@ Database::DBConnect();
                         })
             }
         </script>
-
-
- </script>   
-         <script src="../style/Jquery/jquery.min.js"></script>
-        <script src="../style/Js/bootstrap.bundle.min.js"></script>
-        <script>
-            
-            
-    $("#menu-toggle").click(function (e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-
-
-    
-</script>
