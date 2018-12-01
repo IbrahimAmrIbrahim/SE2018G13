@@ -1,5 +1,5 @@
 <div style="color: #ffffff" >
-    <form action="teacher home.php" method="post" >
+    <form action="View/teacher/home.php" method="post" >
         <div class="row" style="padding-top: 8px">
             <div class="col-md-4" style="text-align: center;">User Name</div>
             <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="" ></div>
