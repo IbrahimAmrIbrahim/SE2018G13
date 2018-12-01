@@ -34,6 +34,11 @@ body {
     color: #ffffff;
 }
 
+.dropdown-item:hover{
+    background: transparent;
+    color: #00f620;
+}
+
 /* Side bar */
 #wrapper {
     padding-left: 0;
