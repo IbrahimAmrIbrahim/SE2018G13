@@ -10,7 +10,7 @@
             </form>
         </div>
         <div class="col-md-6" >
-            <form action="View/studentSignup.php" method="post">
+            <form action="View/teacherSignup.php" method="post">
                 <button class="btn btn-outline-success form-control" type="submit">Student</button>
             </form>
         </div>
