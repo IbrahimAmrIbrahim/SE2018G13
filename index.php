@@ -36,10 +36,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#myModal" href="#">Sign in </a>
+                        <a class="nav-link" data-toggle="modal" data-target="#loginModal" href="#">Sign in </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./View/signup.php">Sign up</a>
+                        <a class="nav-link" data-toggle="modal" data-target="#signupModal" href="#">Sign up</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">About us</a>
@@ -53,10 +53,10 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li>
-                        <a data-toggle="modal" data-target="#myModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
+                        <a data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
                     </li>
                     <li>
-                        <a href="./View/signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
+                        <a data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
                     </li>
                     <li>
                         <a href="#"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
@@ -75,12 +75,23 @@
                         <p>We hope you find it helpful</p>
 
                         <!-- The Modal -->
-                        <div class="modal fade" id="myModal">
+                        <div class="modal fade" id="loginModal">
                             <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
+                                <div class="modal-content" style="background-color: #330066">
                                     <div class="modal-body">
 
-                                        <?php include_once('./View/login.php') ?>
+                                        <?php include_once('./View/login.php')?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- The Modal -->
+                        <div class="modal fade" id="signupModal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content" style="background-color: #330066">
+                                    <div class="modal-body">
+                                        <?php include_once('./View/signup.php') ?>
                                     </div>
                                 </div>
                             </div>

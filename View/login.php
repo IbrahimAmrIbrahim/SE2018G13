@@ -1,4 +1,4 @@
-<div style="color: #002752" >
+<div style="color: #ffffff" >
     <form action="teacher home.php" method="post" >
         <div class="row" style="padding-top: 8px">
             <div class="col-md-4" style="text-align: center;">User Name</div>
