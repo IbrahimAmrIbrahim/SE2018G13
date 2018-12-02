@@ -25,7 +25,7 @@
     $info = safeGet("get");
     ?>
 
-    <body>
+    <body >
  <?php include_once './commons/head_nav.php'; ?>
       
                 <div class="container-fluid">

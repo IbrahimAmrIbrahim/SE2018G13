@@ -12,7 +12,12 @@
                 
                
                 <ul class="navbar-nav ml-auto">
-                    
+                    <li> <a href="./home.php" class="nav-link"> Home </a></li>
+                            
+                    <li> <a href="./students.php" class="nav-link"> Students </a> </li>
+                     
+                    <li> <a class="nav-link"href="./Courses.php">  Courses </a> </li>
+                      
                     <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <img src="../../Images/User.png" class="rounded-circle" alt="User Img" width="40px" height="40px" id="NavImg">
@@ -24,9 +29,10 @@
                             <a class="dropdown-item" href="#">Settings</a>
                             <a class="dropdown-item" href="../../index.php">Sign out</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">About us</a>
+                            <a class="dropdown-item" href="./about us.php">About us</a>
                         </div>
                     </li>
+                  
                     
                     
                 </ul>
@@ -43,10 +49,10 @@
                         Teacher
                     </li>
                     <li>
-                        <a href="../../teacher/courses.php">Courses</a>
+                        <a href="./Courses.php">Courses</a>
                     </li>
                     <li>
-                        <a href="../../teacher/timetable.php">Time Table</a>
+                        <a href="./timetable.php">Time Table</a>
                     </li>
                     <li>
                         <a href="./students.php">Students  </a>
@@ -55,13 +61,13 @@
                         <a href="">files</a>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="./about us.php">About us</a>
                     </li>
                     <li>
                         <a href="#">Services</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="./contact_us.php">Contact</a>
                     </li>
                 </ul>
             </div>
