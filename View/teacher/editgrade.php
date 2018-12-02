@@ -27,7 +27,7 @@ $grades = new Grade($id, "std");
             <input type="hidden" name="id" value="<?= $grades->get('id') ?>">
             <input type="hidden" name="page" value="<?= $page ?>">
 
-            <div class="card">
+            <div class="card"  style="background: #002752">
                 <div class="card-body">
                     <div class="form-group row gutters">
 

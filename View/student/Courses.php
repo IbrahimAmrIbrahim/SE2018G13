@@ -34,7 +34,12 @@ Database::DBConnect();
                         <button class="button yearSortbtn"><i class="fas fa-random yearSort"></i></button>
                     </th>
                     <th scope="col"  style="padding-bottom: 18px">Examine at</th>
-                    
+                     <th scope="col">Attendance
+                       
+                    </th>
+                      <th scope="col">Max Attendance
+                       
+                    </th>
                 </tr>
                 
                 <?php
@@ -51,7 +56,8 @@ Database::DBConnect();
                                           
                                             <td class="<?= 7?>gradeMaxDegree<?= $gradenum ?>"><?= $grade->max_degree ?></td>
                                             <td class="<?= 7 ?>gradeExamineAt<?= $gradenum ?>"><?= $grade->examine_at ?></td>
-                                           
+                                            <td ></td>
+                                             <td ></td>
                                         </tr>
                                     <?php } ?>
                 

@@ -52,7 +52,7 @@
                         <a href="./Courses.php">Courses</a>
                     </li>
                     <li>
-                        <a href="./timetable.php">Time Table</a>
+                        <a href="./time_table.php">Time Table</a>
                     </li>
                     <li>
                         <a href="./students.php">Students  </a>

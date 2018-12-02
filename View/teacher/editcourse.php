@@ -22,7 +22,7 @@ $courses = new Courses($id);
 
         <form action="controllers/savecourse.php" method="post">
             <input type="hidden" name="id" value="<?= $courses->get('id') ?>">
-            <div class="card">
+            <div class="card"  style='background: #002752'>
                 <div class="card-body">
                     <div class="form-group row gutters">
                         <label for="course_name" class="col-sm-2 col-form-label">Name</label>
