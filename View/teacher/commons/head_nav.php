@@ -58,7 +58,7 @@
                         <a href="./students.php">Students  </a>
                     </li>
                     <li>
-                        <a href="">files</a>
+                        <a href="./file and annoucments.php">files</a>
                     </li>
                     <li>
                         <a href="./about us.php">About us</a>
