@@ -44,6 +44,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="./about us.php">About us</a>
                     </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="./contact_us.php">Contact us</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -60,6 +63,9 @@
                     </li>
                     <li>
                         <a href="./about us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                    </li>
+                    <li>
+                        <a href="./contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
                     </li>
                 </ul>
             </div>
