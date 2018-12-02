@@ -2,7 +2,7 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <button id="menu-toggle" type="button" class="btn btn-outline-success"><i class="fas fa-bars"></i></button>
-            <a class="navbar-brand" style="padding-left: 10px" href="../../index.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
+            <a class="navbar-brand" style="padding-left: 10px" href="./home.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
