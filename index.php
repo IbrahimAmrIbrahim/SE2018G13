@@ -42,7 +42,10 @@
                         <a class="nav-link" data-toggle="modal" data-target="#signupModal" href="#">sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
+                        <a class="nav-link" href="./about us.php">About us</a>
+                    </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="./contact_us.php">Contact us</a>
                     </li>
                 </ul>
             </div>
@@ -59,7 +62,10 @@
                         <a data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                        <a href="./about us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                    </li>
+                    <li>
+                        <a href="./contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
                     </li>
                 </ul>
             </div>
