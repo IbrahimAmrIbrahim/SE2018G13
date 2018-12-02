@@ -21,8 +21,8 @@ Database::DBConnect();
            
              <table class="table" style="margin-top: 20px">
                
-                 <thead>
-                <tr id="StudentTable_th">
+                 <thead >
+                 <tr id="StudentTable_th">
                     <th scope="col">Course ID
                         <button class="button idSortbtn"><i class="fas fa-sort-amount-up idSort"></i></button>
                     </th>
