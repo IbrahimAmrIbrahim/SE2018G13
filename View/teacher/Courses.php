@@ -1,3 +1,4 @@
+
 <?php
 include_once('./controllers/common.php');
 include_once('./components/head.php');
@@ -5,15 +6,13 @@ include_once('./models/Courses.php');
 include_once('./models/grade.php');
 Database::DBConnect();
 ?>
-
 <body>    
-    <header>
-        <!-- Fixed navbar -->
-          <?php include_once './commons/head_tag.php';?>
+    <head>
+     <?php include_once './commons/head_tag.php';?>
         <title>
             LMS courses
         </title>
-    </header>
+    </head>
 <body>
     <!-- Begin page content -->
        <?php include_once './commons/head_nav.php';?>
@@ -124,6 +123,7 @@ Database::DBConnect();
        
         <?php include_once('./commons/tail.php') ?>
   </body>
+</html>
         <script type="text/javascript">
             $(document).ready(function () {
                 $('.edit_course').click(function (event) {

@@ -21,7 +21,7 @@ $student = new Student($id);
 
         <form action="controllers/savestudent.php" method="post">
             <input type="hidden" name="id" value="<?= $student->get('id') ?>">
-            <div class="card">
+            <div class="card"  style='background: #002752'>
                 <div class="card-body">
                     <div class="form-group row gutters">
                         <?php

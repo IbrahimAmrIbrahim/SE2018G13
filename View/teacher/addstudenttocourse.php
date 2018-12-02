@@ -9,42 +9,23 @@ $stds = Student::all(NULL, NULL, NULL);
 $grades = Grade::crs_all($id, NULL, NULL);
 $num = 0;
 ?>
-
+<head>
+    <?php include_once './commons/head_tag.php'; ?>
+</head>
 <body>    
-    <header>
-        <!-- Fixed navbar -->
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-           <a class="navbar-brand" href="./index.php"> <i class="fas fa-user-graduate"></i> SIS</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="./index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./students.php">Students</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="./courses.php">Courses<span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+  
     <!-- Begin page content -->
     <main role="main" class="container">
         <h2 class="mt-5">Add Students to Course</h2>
         <form action="controllers/addnewstudent.php" method="post">
             <input type="hidden" name="course_id" value="<?= $id ?>">
-            <div class="card">
+            <div class="card"style="background: black">
                 <div class="card-body">
                     <div class="form-group row gutters"  style="margin-top: 20px">
                         <div class="form-group col-sm-12">
                             <table class="table col-sm-12">
                                 <thead>
-                                    <tr id="addCourseTable_th" >
+                                    <tr id="GardeTable_th" >
                                         <th scope="col">
                                             <label class="labelcontainer">Student Name
                                                 <input type="checkbox" onclick="toggle(this)">
@@ -68,7 +49,7 @@ $num = 0;
                                             $num = $num + 1;
                                             $check_box = "checkbox" . $num;
                                             ?> 
-                                            <tr id="addCourseTable_tr">
+                                            <tr id="GardeTable_tr">
                                                 <td>
                                                     <label class="labelcontainer"><?= $student->name ?>
                                                         <input type="checkbox"  class="Checked" name="<?= $check_box ?>" value="<?= $student->id ?>">
