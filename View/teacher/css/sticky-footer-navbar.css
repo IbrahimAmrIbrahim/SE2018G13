@@ -32,36 +32,36 @@ code {
 
 #StudentTable_th{
     opacity: 0.4;
-    background-color: #002752;
+    background-color: red;
     color: #ffffff;
 }
 
 #StudentTable_tr{
    opacity: 0.4;
-    background-color: #343a40  ;
+    background-color: red  ;
 }
 
 #GardeTable_th{
     opacity: 0.4;
-    background-color: #002752;
+    background-color: red;
     color: #ffffff;
 }
 
 #GardeTable_tr{
     opacity: 0.4;
-    background-color: #313239;
+    background-color: red;
 }
 
 #addCourseTable_th{
     opacity: 0.4;
-    background-color: #FFC000;
+    background-color: red;
     color: #ffffff;
 }
 
 
 #addCourseTable_tr{
     opacity: 0.4;
-    background-color: #FFF2CC;
+    background-color: red;
 }
 
 /* CheckBox style
