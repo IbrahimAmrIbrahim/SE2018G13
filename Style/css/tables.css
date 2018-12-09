@@ -5,29 +5,29 @@
 
 }
 #StudentTable_th{
-    background-color: rgba(06 ,44,51,0.60 );
+    background-color: rgba(06 ,44,51,0.85 );
     color: snow;
 }
 
 #StudentTable_tr{
-    background-color: rgba(47 ,79,79,0.60)  ;
+    background-color: rgba(47 ,79,79,0.85)  ;
 }
 
 #GardeTable_th{
-    background-color: rgba(06 ,44,51,0.60 );
+    background-color: rgba(06 ,44,51,0.85 );
     color: #ffffff;
 }
 
 #GardeTable_tr{
-    background-color: rgba(47 ,79,79,0.60) ;
+    background-color: rgba(47 ,79,79,0.85) ;
 }
 #addCourseTable_th{
-    background-color: rgba(06 ,44,51,0.60 );
+    background-color: rgba(06 ,44,51,0.85 );
     color: #ffffff;
 }
 
 #addCourseTable_tr{
-    background-color: rgba(47 ,79,79,0.60) ;
+    background-color: rgba(47 ,79,79,0.85) ;
 
 }
 /* CheckBox style
