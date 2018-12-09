@@ -29,7 +29,7 @@
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
                             </tr>
                             <tr>
-                                <td scope="col" style="padding-bottom: 18px"><button><a href="./addEvent.php">Add event</a></button></td> 
+                                <td scope="col" style="padding-bottom: 18px"><button><a href="./add_event.php">Add event</a></button></td> 
                             </tr>
                         </thead>
                     </table>
