@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-include_once("../models/student.php");
+include_once("../Models/student.php");
 Database::DBConnect();
 $student = new Student($_GET['id']);
 $student->delete();

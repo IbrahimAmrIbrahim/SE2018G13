@@ -1,7 +1,7 @@
 <?php
 
 header('Content-Type: application/json; charset=utf-8');
-include_once("../models/grade.php");
+include_once("../Models/grade.php");
 Database::DBConnect();
 $page = $_GET['page'];
 

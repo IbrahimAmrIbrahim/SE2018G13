@@ -1,7 +1,7 @@
 <?php
 
 header('Content-Type: application/json; charset=utf-8');
-include_once("../models/Courses.php");
+include_once("../Models/Courses.php");
 Database::DBConnect();
 $courses = new Courses($_GET['id']);
 $courses->delete();

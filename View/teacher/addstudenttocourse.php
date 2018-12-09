@@ -1,7 +1,7 @@
 <?php
-include_once('../../controllers/common.php');
-include_once('../../models/student.php');
-include_once('../../models/grade.php');
+include_once('../../Controllers/common.php');
+include_once('../../Models/student.php');
+include_once('../../Models/grade.php');
 Database::DBConnect();
 $id = safeGet('id'); // course id
 $stds = Student::all(NULL, NULL, NULL);

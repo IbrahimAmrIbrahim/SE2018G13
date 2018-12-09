@@ -1,6 +1,6 @@
 <?php
-include_once("../../controllers/common.php");
-include_once('../../models/Courses.php');
+include_once("../../Controllers/common.php");
+include_once('../../Models/Courses.php');
 $id = safeGet('id');
 Database::DBConnect();
 $courses = new Courses($id);
