@@ -1,6 +1,6 @@
 <?php
-include_once("./controllers/common.php");
-include_once('./models/student.php');
+include_once("../../controllers/common.php");
+include_once('../../models/student.php');
 $id = safeGet('id');
 Database::DBConnect();
 $student = new Student($id);
@@ -49,5 +49,5 @@ $student = new Student($id);
             </div>
         </div>
     </body>
-    <?php include_once('./commons/tail.php') ?>
+    <?php include_once('./common/tail.php') ?>
 </html>
