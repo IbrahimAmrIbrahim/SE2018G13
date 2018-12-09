@@ -1,7 +1,7 @@
 body {
     padding-top: 54px;
     overflow-x: hidden;
-    background: url("b4.png") fixed ;
+    background: url("../../Images/b4.png") fixed ;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: gold;
@@ -20,8 +20,18 @@ body {
     color: #00f620;
 }
 
-#NavImg {
-    border: 3px solid #0000cc;
+.Navbtn:hover{
+    border-style: groove;
+    border-color: #00ed00;
+    background: transparent;
+}
+
+.Navbtn{
+    background: transparent; 
+    color: #ffffff;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-width: 2px;
 }
 
 .no-arrow .dropdown-toggle::after {

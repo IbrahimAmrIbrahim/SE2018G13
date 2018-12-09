@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang= "en">
-
+<html>
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="./Images/chalkboard-teacher-solid.ico">
+        <link rel="icon" href="../Images/chalkboard-teacher-solid.ico">
 
         <title>LMS</title>
 
         <!-- Bootstrap core CSS -->
-        <link href="./Style/Bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="../Style/Bootstrap/bootstrap.min.css" rel="stylesheet">
 
         <!-- Font Awesome -->
-        <link href="./Style/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+        <link href="../Style/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
 
         <!-- Custom styles for this template -->
-        <link href="./Style/css/common.css" rel="stylesheet">
+        <link href="../Style/css/common.css" rel="stylesheet">
+        <link href="../Style/css/card.css" rel="stylesheet">
+
     </head>
 
     <body>
@@ -26,12 +27,12 @@
             <a class="navbar-brand" style="padding-left: 10px" href="./index.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown no-arrow">
-                    <button class="btn Navbtn dropdown-toggle" id="userDropdown"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="./Images/User.png" class="rounded-circle" alt="User Img" width="30px" height="30px">&nbsp; &nbsp; General</button>
+                    <button class="btn Navbtn dropdown-toggle" id="userDropdown"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../Images/User.png" class="rounded-circle" alt="User Img" width="30px" height="30px">&nbsp; &nbsp; General</button>
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="../index.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
                         <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
                         <a class="dropdown-item"  data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
-                        <a class="dropdown-item" href="./view/about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
                         <a class="dropdown-item" href="./view/contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
                     </div>
                 </li>
@@ -43,13 +44,13 @@
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
                     <li>
+                        <a href="./view/about_us.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
+                    </li>
+                    <li>
                         <a data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; sign in</a>
                     </li>
                     <li>
                         <a data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
-                    </li>
-                    <li>
-                        <a href="./view/about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
                     </li>
                     <li>
                         <a href="./view/contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
@@ -57,14 +58,30 @@
                 </ul>
             </div>
 
-
             <div id="page-content-wrapper">
                 <div class="container-fluid">
-
-                    <div class="container">
-                        <h1 class="mt-5"> Welcome everyone to our site </h1>
-                        <p>it's for study and mange your time and ofcourse for ads $$$ </p>
-                        <p>We hope you find it helpful</p>
+                    <div class="container" style="margin-top: 50px">
+                        <h2>We are electrical engineers from CSE department in AIN SHAMS University.</h2>
+                        <div class="row">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6">
+                                <div class="card-box">
+                                    <div class="card-title">
+                                        <h2>Team Members (G13)</h2>
+                                        <ul>
+                                            <li>Ibrahim Amr</li>
+                                            <li>Ahmed Hessuin</li>
+                                            <li>Ahmed Osama</li>
+                                            <li>Ahmed Saeid</li>
+                                            <li>Eslam Tarek</li>
+                                            <li>Marwan Mostafa</li>
+                                            <li>Mohammed Adel</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
 
                         <!-- The Modal -->
                         <div class="modal fade" id="loginModal">
@@ -88,27 +105,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
-        <footer class="page-footer">
-            <div class="footer-copyright text-center py-3">Copyright 2018, Software Engineering Course, ASUENG.</div>
-        </footer>
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="./Style/Jquery/jquery.min.js"></script>
-        <script src="./Style/Js/bootstrap.bundle.min.js"></script>
-
-        <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-        </script>
+        <?php include_once './common/tail.php'; ?>
     </body>
 </html>
