@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang= "en">
+    <head>
     <?php include_once './common/head.php'; ?>  
+    </head>
     <body>
         <?php
         include_once './common/Navbar.php';
