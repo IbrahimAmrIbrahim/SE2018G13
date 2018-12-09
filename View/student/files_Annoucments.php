@@ -14,7 +14,7 @@
                             <tr id="StudentTable_th">
                                 <th scope="col" style="padding-bottom: 18px">  files </th> 
                             </tr>
-                            <tr>
+                            <tr id="StudentTable_tr"> 
                                 <td> <button>file click to open</button></td>
                             </tr>
                         </thead>

@@ -22,7 +22,7 @@
                         <thead >
                             <tr id="StudentTable_th">
                                 <th scope="col" style="padding-bottom: 18px"> Annoucmnets</th>
-                                <th scope="col" style="padding-bottom: 18px"><button> <a href="./addAnnoucment.php">add </a></button></th>
+                                <th scope="col" style="padding-bottom: 18px"><button  style="padding-right: 50px ;padding-left: 50px"> <a href="./addAnnoucment.php">add </a></button></th>
                             </tr>
                         </thead>
                     </table>
