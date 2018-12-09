@@ -13,7 +13,7 @@
                             <tr id="StudentTable_th">
                                 <th scope="col" style="padding-bottom: 18px">  file</th> 
                             </tr>
-                            <tr>
+                            <tr id="StudentTable_tr">
                                 <td  scope="col" style="padding-bottom: 18px"> <button>upload file </button></td> 
                             </tr>
                         </thead>

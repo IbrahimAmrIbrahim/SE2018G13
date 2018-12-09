@@ -19,7 +19,7 @@
                                 <th scope="col" style="padding-bottom: 18px"> Friday</th> 
                                 <th scope="col" style="padding-bottom: 18px"> Saturday</th> 
                             </tr>
-                            <tr>
+                            <tr id="GardeTable_tr"  >
                                 <td scope="col" style="padding-bottom: 18px"> event at xx:xx</td> 
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
@@ -28,7 +28,7 @@
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
                             </tr>
-                            <tr>
+                            <tr id="StudentTable_tr" >
                                 <td scope="col" style="padding-bottom: 18px"><button><a href="./add_event.php">Add event</a></button></td> 
                             </tr>
                         </thead>

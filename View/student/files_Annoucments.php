@@ -26,7 +26,7 @@
                                 <th scope="col" style="padding-bottom: 18px"> Annoucmnets</th>
                             </tr>
                         </thead>
-                        <tr>
+                        <tr id="StudentTable_tr">
                             <td> ANNOUCMENT EXAMPLE </td>
                         </tr>
                     </table>

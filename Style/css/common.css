@@ -1,11 +1,11 @@
 body {
     padding-top: 54px;
     overflow-x: hidden;
-    /**background: url("../../Images/b4.png") fixed ;**/
-    background-color: #000000;
+    background:url('../../images/b1.jpg')fixed;
+    /**background-color: #000000;**/
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    color: gold;
+    color: black;
     /* Margin bottom by footer height */
     margin-bottom: 60px;
 }

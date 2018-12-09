@@ -10,7 +10,7 @@
                 <div role="main" class="container">
                     <h2 class="mt-4">ADD Event</h2>
                     <form action="./time_table.php" method="post" id="form">
-                        <div class="card" style="background:  #002752">
+                        <div class="card" style="background: rgba(06 ,44,51,0.60 );">
                             <div class="card-body">
                                 <div class="form-group row gutters">
                                     <label  for="crsinput" class="col-sm-2 col-form-label">Name</label>
