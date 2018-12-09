@@ -17,34 +17,26 @@
 
         <!-- Custom styles for this template -->
         <link href="../../Style/css/common.css" rel="stylesheet">
-
     </head>
-
-
-
-    <?php
-    include_once('../../Control/common.php');
-    $info = safeGet("get");
-    ?>
 
     <body>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <button id="menu-toggle" type="button" class="btn btn-outline-success"><i class="fas fa-bars"></i></button>
-            <a class="navbar-brand" style="padding-left: 10px" href="../../index.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
+            <a class="navbar-brand" style="padding-left: 10px" href="./index.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown no-arrow">
+                    <button class="btn Navbtn dropdown-toggle" id="userDropdown"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../Images/User.png" class="rounded-circle" alt="User Img" width="30px" height="30px">&nbsp; &nbsp; General</button>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                    </li>
-                </ul>
-            </div>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="../../index.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
+                        <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
+                        <a class="dropdown-item" href="../about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                        <a class="dropdown-item" href="../contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
+                    </div>
+                </li>
+            </ul>
         </nav>
-
         <div id="wrapper">
 
             <div id="sidebar-wrapper">
@@ -53,16 +45,60 @@
                         <a href="../../index.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                        <a data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; sign in</a>
+                    </li>
+                    <li>
+                        <a href="../about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                    </li>
+                    <li>
+                        <a href="../contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
                     </li>
                 </ul>
             </div>
-
 
             <div id="page-content-wrapper">
                 <div class="container-fluid">
 
                     <div class="container" style="padding-top: 20px">
+
+                        <!-- The Login Modal -->
+                        <div class="modal fade" id="loginModal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content" style="background-color: #330066; color: #ffffff;">
+                                    <div class="modal-body">
+                                        <form action="../teacher/home.php" method="post" >
+                                            <div class="row" style="padding-top: 8px">
+                                                <div class="col-md-4" style="text-align: center;">User Name</div>
+                                                <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="" ></div>
+                                            </div>
+
+                                            <div class="row" style="padding-top: 5px">
+                                                <div class="col-md-4" style="text-align: center;">Password</div>
+                                                <div class="col-md-8"><input class="form-control" type ="password"  value="" name ="" ></div>
+                                            </div>
+
+                                            <div class="row" style="padding-top: 10px">
+                                                <div class="col-md-6" ></div>
+                                                <div class="col-md-3"><button class="btn btn-outline-success form-control" type="submit">Log in</button></div>
+                                                <div class="col-md-3"><button class="btn btn-outline-danger form-control" data-dismiss="modal">Cancel</button></div>
+                                            </div>
+                                        </form>
+                                        <div class="row" style="padding-top: 15px">
+                                            <div class="col-md-7" ></div>
+                                            <div class="col-md-5" style=" text-align: right; font-size: 10pt"><a href="" style="color: red;">Forget my password!</a></div>
+                                        </div>
+                                        <form  action="home.php" method="post">
+                                            <div class="row" style="padding-top: 10px">
+                                                <div class="col-md-6" ></div>
+                                                <div class="col-md-6"><button class="btn btn-outline-success form-control" type="submit">Log in as student</button></div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Page Content -->
                         <form action="#" method="post">
                             <div class="row">
                                 <div class="col-md-3">
@@ -131,48 +167,33 @@
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
-
-        <footer class="page-footer">
-            <div class="footer-copyright text-center py-3">Copyright 2018, Software Engineering Course, ASUENG.</div>
-        </footer>
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="../../Style/Jquery/jquery.min.js"></script>
-        <script src="../../Style/Js/bootstrap.bundle.min.js"></script>
-
-        <script>
-                                                        function showPassword() {
-                                                            var x = document.getElementById("pass");
-                                                            if (x.type === "password") {
-                                                                x.type = "text";
-                                                            } else {
-                                                                x.type = "password";
-                                                            }
-                                                        }
-
-                                                        function showPin() {
-                                                            var x = document.getElementById("pin");
-
-                                                            if (x.type === "password") {
-                                                                x.type = "text";
-                                                            } else {
-                                                                x.type = "password";
-                                                            }
-                                                        }
-
-                                                        $("#menu-toggle").click(function (e) {
-                                                            e.preventDefault();
-                                                            $("#wrapper").toggleClass("toggled");
-                                                        });
-        </script>
-
     </body>
+    <?php include_once './common/tail.php'; ?>
+
+
+
+    <script>
+        function showPassword() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+        function showPin() {
+            var x = document.getElementById("pin");
+
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
+    </script>
 </html>

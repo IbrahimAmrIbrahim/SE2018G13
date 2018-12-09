@@ -1,75 +1,48 @@
-<html>
-    <head>
-        <?php include_once '../teacher/commons/head_tag.php'; ?>  
-        <title>
+<!DOCTYPE html>
+<html lang= "en">
+    <?php include_once './common/head.php'; ?>  
 
-            time table LMS
-        </title>        
-        <link rel="stylesheet" href="../teacher/css/sticky-footer-navbar.css"> 
-    </head>
     <body>
-        <?php include_once '../teacher/commons/head_nav_student.php';?>
+        <?php
+        include_once './common/Navbar.php';
+        ?>  
 
-        <table class="table" style="margin-top: 20px">
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div role="main" class="container">
+                    <table class="table" style="margin-top: 20px">
+                        <thead >
+                            <tr id="StudentTable_th">
+                                <th scope="col" style="padding-bottom: 18px">Sunday</th>
+                                <th scope="col" style="padding-bottom: 18px">Monday</th>
+                                <th scope="col" style="padding-bottom: 18px">Tuesday</th>
+                                <th scope="col" style="padding-bottom: 18px">Wednesday</th>
+                                <th scope="col" style="padding-bottom: 18px"> Thursday</th> 
+                                <th scope="col" style="padding-bottom: 18px"> Friday</th> 
+                                <th scope="col" style="padding-bottom: 18px"> Saturday</th> 
+                            </tr>
 
-            <thead >
-                <tr id="StudentTable_th">
-                    <th scope="col" style="padding-bottom: 18px"> sunday  
+                            <tr>
+                                <td  scope="col" style="padding-bottom: 18px"> event at xx:xx</td> 
+                                <td  scope="col" style="padding-bottom: 18px">Event</td> 
+                                <td  scope="col" style="padding-bottom: 18px">Event</td> 
+                                <td  scope="col" style="padding-bottom: 18px">Event</td> 
+                                <td  scope="col" style="padding-bottom: 18px">Event</td> 
+                                <td  scope="col" style="padding-bottom: 18px">Event</td> 
+                                <td  scope="col" style="padding-bottom: 18px">Event</td> 
+                            </tr>
+                        </thead>
+                    </table>
 
-                    </th>
-                    <th scope="col" style="padding-bottom: 18px">monday
-
-                    </th>
-
-                    <th scope="col" style="padding-bottom: 18px">tuesday
-
-                    </th>
-                    <th scope="col"  style="padding-bottom: 18px">wednesday</th>
-                    <th scope="col" style="padding-bottom: 18px"> thursday</th> 
-                    <th scope="col" style="padding-bottom: 18px"> friday</th> 
-                    <th scope="col" style="padding-bottom: 18px"> saturday</th> 
-
-
-                </tr>
-
-                <tr>
-                    <td  scope="col" style="padding-bottom: 18px"> event at xx:xx</td> 
-                    <td  scope="col" style="padding-bottom: 18px"> <button> <a href="./addevent.php">add event</a> </button></td> 
-            
-                    <td  scope="col" style="padding-bottom: 18px"> <button>add event </button></td> 
-                    <td  scope="col" style="padding-bottom: 18px"> <button>add event </button></td> 
-                    <td  scope="col" style="padding-bottom: 18px"> <button>add event </button></td> 
-                    <td  scope="col" style="padding-bottom: 18px"> <button>add event </button></td> 
-                    <td  scope="col" style="padding-bottom: 18px"> <button>add event </button></td> 
-
-                </tr>
-    <tr>
-                    <td  scope="col" style="padding-bottom: 18px"> <button>add event </button></td> 
-                   
-
-                </tr>
-
-
-
-
-
-
-            </thead>
-
-        </table>
-
-        
-        <table style="margin-top: 200px"class="table">
-             <thead >
-                <tr id="StudentTable_th">
-            <th scope="col" style="padding-bottom: 18px"> date event</th>
-            <th scope="col" style="padding-bottom: 18px"><button> <a href='add_event_date.php'>add event</a></button></th>
-             
-              </tr>
-               
-            </thead>
-      
-        </table>
-         <?php include_once '../teacher/commons/tail.php';?>   
+                    <div class="row">
+                        <div class="col-md-10"></div>
+                        <div class="col-md-2">
+                            <button> <a href="./addEvent.php">add event</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
+    <?php include_once './common/tail.php'; ?>   
 </html>

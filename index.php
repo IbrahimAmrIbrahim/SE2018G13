@@ -63,15 +63,41 @@
 
                     <div class="container">
                         <h1 class="mt-5"> Welcome everyone to our site </h1>
-                        <p>it's for study and mange your time and ofcourse for ads $$$ </p>
+                        <p>it's for study and mange your time </p>
                         <p>We hope you find it helpful</p>
 
                         <!-- The Modal -->
                         <div class="modal fade" id="loginModal">
                             <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content" style="background-color: #330066">
+                                <div class="modal-content" style="background-color: #330066; color: #ffffff;">
                                     <div class="modal-body">
-                                        <?php include_once('./View/login.php') ?>
+                                        <form action="View/teacher/home.php" method="post" >
+                                            <div class="row" style="padding-top: 8px">
+                                                <div class="col-md-4" style="text-align: center;">User Name</div>
+                                                <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="" ></div>
+                                            </div>
+
+                                            <div class="row" style="padding-top: 5px">
+                                                <div class="col-md-4" style="text-align: center;">Password</div>
+                                                <div class="col-md-8"><input class="form-control" type ="password"  value="" name ="" ></div>
+                                            </div>
+
+                                            <div class="row" style="padding-top: 10px">
+                                                <div class="col-md-6" ></div>
+                                                <div class="col-md-3"><button class="btn btn-outline-success form-control" type="submit">Log in</button></div>
+                                                <div class="col-md-3"><button class="btn btn-outline-danger form-control" data-dismiss="modal">Cancel</button></div>
+                                            </div>
+                                        </form>
+                                        <div class="row" style="padding-top: 15px">
+                                            <div class="col-md-7" ></div>
+                                            <div class="col-md-5" style=" text-align: right; font-size: 10pt"><a href="" style="color: red;">Forget my password!</a></div>
+                                        </div>
+                                        <form  action="View/student/home.php" method="post">
+                                            <div class="row" style="padding-top: 10px">
+                                                <div class="col-md-6" ></div>
+                                                <div class="col-md-6"><button class="btn btn-outline-success form-control" type="submit">Log in as student</button></div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -80,35 +106,47 @@
                         <!-- The Modal -->
                         <div class="modal fade" id="signupModal">
                             <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content" style="background-color: #330066">
+                                <div class="modal-content" style="background-color: #330066;color: #ffffff;">
                                     <div class="modal-body">
-                                        <?php include_once('./View/generalSignup.php') ?>
+                                        <div class="row" style="padding-top: 5px">
+                                            <div class="col-md-12" style="text-align: center;">Sign up as</div>
+                                        </div>
+                                        <div class="row" style="padding-top: 10px">
+                                            <div class="col-md-6" >
+                                                <form action="View/teacher/signup.php" method="post">
+                                                    <button class="btn btn-outline-success form-control" type="submit">Teacher</button>
+                                                </form>
+                                            </div>
+                                            <div class="col-md-6" >
+                                                <form action="View/student/signup.php" method="post">
+                                                    <button class="btn btn-outline-success form-control" type="submit">Student</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
 
         <footer class="page-footer">
             <div class="footer-copyright text-center py-3">Copyright 2018, Software Engineering Course, ASUENG.</div>
         </footer>
-
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="./Style/Jquery/jquery.min.js"></script>
-        <script src="./Style/Js/bootstrap.bundle.min.js"></script>
-
-        <script>
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-        </script>
     </body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Style/Jquery/jquery.min.js"></script>
+    <script src="./Style/Js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 </html>

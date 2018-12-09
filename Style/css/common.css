@@ -1,7 +1,8 @@
 body {
     padding-top: 54px;
     overflow-x: hidden;
-    background: url("../../Images/b4.png") fixed ;
+    /**background: url("../../Images/b4.png") fixed ;**/
+    background-color: #000000;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     color: gold;
