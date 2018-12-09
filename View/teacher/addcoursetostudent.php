@@ -25,7 +25,7 @@ $check_box = "checkbox" . $num;
                     <form action="controllers/addnewcourse.php" method="post" >
                         <input type="hidden" name="student_id" value="<?= $id ?>">
 
-                        <div class="card" style="background: black">
+                        <div  >
                             <div class="card-body">
                                 <div class="form-group row gutters"  style="margin-top: 20px">
                                     <div class="form-group col-sm-12">
@@ -72,7 +72,7 @@ $check_box = "checkbox" . $num;
                                         </table>
                                     </div>
                                     <div class="form-group col-sm-12">
-                                        <button class="button float-right" type="submit" name="number_box" value="<?= $num ?>" >Add</button>
+                                        <button class="button  " type="submit" name="number_box" value="<?= $num ?>"  style="padding-left: 50px;padding-right: 50px ">Add</button>
                                     </div>
                                 </div>
                             </div>

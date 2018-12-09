@@ -32,8 +32,11 @@
                                 <td  scope="col" style="padding-bottom: 18px">Event</td> 
                             </tr>
                             <tr id="StudentTable_tr" >
+                                
                                 <td scope="col" style="padding-bottom: 18px"><button><a href="./add_event.php">Add event</a></button></td> 
+                              <td></td> <td></td> <td></td> <td></td><td></td> <td></td>
                             </tr>
+                        
                         </thead>
                     </table>
                 </div>

@@ -21,7 +21,7 @@ $student = new Student($id);
 
                     <form action="controllers/savestudent.php" method="post">
                         <input type="hidden" name="id" value="<?= $student->get('id') ?>">
-                        <div class="card"  style='background: #002752'>
+                        <div class="card"  style='background: darkslategray ;opacity: .85' >
                             <div class="card-body">
                                 <div class="form-group row gutters">
                                     <?php
@@ -40,7 +40,7 @@ $student = new Student($id);
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <button class="button float-right" type="submit"><?= ($id) ? "Save" : "Add" ?></button>
+                                    <button style="padding-left:50px ;padding-right: 50px" class="button float-right" type="submit"><?= ($id) ? "Save" : "Add" ?></button>
                                 </div>
                             </div>
                         </div>
