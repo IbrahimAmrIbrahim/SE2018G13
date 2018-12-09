@@ -31,15 +31,11 @@
                                 <td  scope="col" style="padding-bottom: 18px">Event</td> 
                                 <td  scope="col" style="padding-bottom: 18px">Event</td> 
                             </tr>
+                            <tr>
+                                <td scope="col" style="padding-bottom: 18px"><button><a href="./addEvent.php">Add event</a></button></td> 
+                            </tr>
                         </thead>
                     </table>
-
-                    <div class="row">
-                        <div class="col-md-10"></div>
-                        <div class="col-md-2">
-                            <button> <a href="./addEvent.php">add event</a></button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

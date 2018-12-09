@@ -10,13 +10,22 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="container" style="margin-top: 50px">
+                    <h2>We are electrical engineers from CSE department in AIN SHAMS University.</h2>
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-6">
                             <div class="card-box">
                                 <div class="card-title">
-                                    <h2>phone number: +20 xxxxxxxxxxx <br>
-                                        location: egypt/xxxxx/xxxx</h2>
+                                    <h2>Team Members (G13)</h2>
+                                    <ul>
+                                        <li>Ibrahim Amr</li>
+                                        <li>Ahmed Hessuin</li>
+                                        <li>Ahmed Osama</li>
+                                        <li>Ahmed Saeid</li>
+                                        <li>Eslam Tarek</li>
+                                        <li>Marwan Mostafa</li>
+                                        <li>Mohammed Adel</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -26,5 +35,5 @@
             </div>
         </div>
     </body>
-    <?php include_once './common/tail.php'; ?>
+    <?php include_once './common/tail.php'; ?> 
 </html>
