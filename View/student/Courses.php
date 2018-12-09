@@ -7,12 +7,15 @@ Database::DBConnect();
 
 <!DOCTYPE html>
 <html lang= "en">
-    <?php include_once './common/head.php'; ?>  
+    <head>
+   <?php include_once './common/head.php'; ?>  
+        <link href="../../Style/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css">
+    </head>
     <body>
         <?php
         include_once './common/Navbar.php';
         ?>   
-        <div id="page-content-wrapper">
+    
             <div class="container-fluid">
                 <div role="main" class="container">
                     <table class="table" style="margin-top: 20px">
@@ -53,11 +56,13 @@ Database::DBConnect();
                     </table>
                 </div>
             </div>
-        </div>
+      
+    
+     <?php include_once './common/tail.php'; ?> 
     </body> 
-    <?php include_once './common/tail.php'; ?> 
+   
 
-
+    
 
     <script type="text/javascript">
         $(document).ready(function () {
