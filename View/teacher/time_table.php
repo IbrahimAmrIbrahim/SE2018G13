@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang= "en">
     <?php include_once './common/head.php'; ?>  
+    <link href="../../Style/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css"> 
     <body>
         <?php
         include_once './common/Navbar.php';
@@ -19,7 +20,7 @@
                                 <th scope="col" style="padding-bottom: 18px"> Friday</th> 
                                 <th scope="col" style="padding-bottom: 18px"> Saturday</th> 
                             </tr>
-                            <tr>
+                            <tr id="StudentTable_tr">
                                 <td scope="col" style="padding-bottom: 18px"> event at xx:xx</td> 
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
@@ -28,8 +29,10 @@
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
                                 <td scope="col" style="padding-bottom: 18px">Event</td> 
                             </tr>
-                            <tr>
+                            <tr id="StudentTable_tr" >
+                               
                                 <td scope="col" style="padding-bottom: 18px"><button><a href="./add_event.php">Add event</a></button></td> 
+                                <td></td> <td></td> <td></td><td></td> <td></td> <td></td>
                             </tr>
                         </thead>
                     </table>

@@ -9,6 +9,7 @@ Database::DBConnect();
 <!DOCTYPE html>
 <html lang= "en">
     <?php include_once './common/head.php'; ?>  
+       <link href="../../Style/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css"> 
     <body>
         <?php
         include_once './common/Navbar.php';

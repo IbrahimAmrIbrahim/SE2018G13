@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang= "en">
-    <?php include_once './common/head.php'; ?>  
+    <head>
+    <?php include_once './common/head.php'; ?> 
+        <link href="../../Style/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css">
+    </head>
 
     <body>
         <?php
         include_once './common/Navbar.php';
         ?>  
 
-        <div id="page-content-wrapper">
+     
             <div class="container-fluid">
                 <div role="main" class="container">
                     <table class="table" style="margin-top: 20px">
@@ -22,7 +25,7 @@
                                 <th scope="col" style="padding-bottom: 18px"> Saturday</th> 
                             </tr>
 
-                            <tr>
+                            <tr id="GardeTable_tr"  >
                                 <td  scope="col" style="padding-bottom: 18px"> event at xx:xx</td> 
                                 <td  scope="col" style="padding-bottom: 18px">Event</td> 
                                 <td  scope="col" style="padding-bottom: 18px">Event</td> 
@@ -31,14 +34,18 @@
                                 <td  scope="col" style="padding-bottom: 18px">Event</td> 
                                 <td  scope="col" style="padding-bottom: 18px">Event</td> 
                             </tr>
-                            <tr>
-                                <td scope="col" style="padding-bottom: 18px"><button><a href="./add_event.php">Add event</a></button></td> 
-                            </tr>
                         </thead>
                     </table>
+
+                    <div class="row">
+                        <div class="col-md-10"></div>
+                        <div class="col-md-2">
+                            <button> <a href="./addEvent.php">add event</a></button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+      <?php include_once './common/tail.php'; ?>   
     </body>
-    <?php include_once './common/tail.php'; ?>   
+   
 </html>

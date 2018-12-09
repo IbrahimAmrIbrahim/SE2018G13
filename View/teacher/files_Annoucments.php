@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang= "en">
     <?php include_once './common/head.php'; ?>  
+     <link href="../../Style/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css"> 
     <body>
         <?php
         include_once './common/Navbar.php';
@@ -13,7 +14,7 @@
                             <tr id="StudentTable_th">
                                 <th scope="col" style="padding-bottom: 18px">  file</th> 
                             </tr>
-                            <tr>
+                            <tr id="StudentTable_tr">
                                 <td  scope="col" style="padding-bottom: 18px"> <button>upload file </button></td> 
                             </tr>
                         </thead>
@@ -22,8 +23,9 @@
                         <thead >
                             <tr id="StudentTable_th">
                                 <th scope="col" style="padding-bottom: 18px"> Annoucmnets</th>
-                                <th scope="col" style="padding-bottom: 18px"><button> <a href="./addAnnoucment.php">add </a></button></th>
+                                <th scope="col" style="padding-bottom: 18px"><button style="padding-left: 10px ;padding-right: 10px" > <a href="./addAnnoucment.php">add </a></button></th>
                             </tr>
+                           
                         </thead>
                     </table>
                 </div>

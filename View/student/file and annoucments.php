@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang= "en">
+    <head>
     <?php include_once './common/head.php'; ?>  
-
+        <link href="../../Style/css/sticky-footer-navbar.css" rel="stylesheet" type="text/css"> 
+</head>
     <body>
         <?php
         include_once './common/Navbar.php';
@@ -26,7 +28,7 @@
                                 <th scope="col" style="padding-bottom: 18px"> Annoucmnets</th>
                             </tr>
                         </thead>
-                        <tr>
+                        <tr id="StudentTable_tr">
                             <td> ANNOUCMENT EXAMPLE </td>
                         </tr>
                     </table>
