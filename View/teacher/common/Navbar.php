@@ -26,7 +26,7 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                Student Name
+                Teacher Name
             </li>
             <li>
                 <a href="./home.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>

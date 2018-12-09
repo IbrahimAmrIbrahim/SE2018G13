@@ -11,5 +11,5 @@ if ($id == 0) {
     $student->name = safeGet("name");
     $student->save();
 }
-header('Location: ../students.php');
+header('Location: ..//view/student/students.php');
 ?>

@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="col-sm-10" style="margin-bottom: 10px"></div>
                                     <div class="col-sm-2" style="margin-bottom: 10px">
-                                        <button type='submit'> ADD</button>
+                                        <button class="form-control" type='submit'> ADD</button>
                                     </div>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
             </div>
         </div>
     </body>
-    <?php include_once('./commons/tail.php') ?> 
+    <?php include_once('./common/tail.php') ?> 
 </html>
 
 

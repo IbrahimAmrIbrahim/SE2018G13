@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?php
-include_once('../../controller/common.php');
-include_once('../../model/student.php');
-include_once('../../model/grade.php');
+include_once('../../controllers/common.php');
+include_once('../../models/student.php');
+include_once('../../models/grade.php');
 Database::DBConnect();
 ?>
 

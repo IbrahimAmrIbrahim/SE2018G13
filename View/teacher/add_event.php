@@ -21,6 +21,10 @@
                                     <div class="col-sm-10" style="margin-bottom: 10px">
                                         <input class="form-control" id="crsinput" type='time' value="" >
                                     </div>
+                                    <label  for="crsinput" class="col-sm-2 col-form-label">Date</label>
+                                    <div class="col-sm-10" style="margin-bottom: 10px">
+                                        <input class="form-control" id="crsinput" type='date'  value="" >
+                                    </div>
                                     <label  for="crsinput" class="col-sm-2 col-form-label">Info</label>
                                     <div class="col-sm-10" style="margin-bottom: 10px">
                                         <input class="form-control" id="crsinput" type="text"  value="" >

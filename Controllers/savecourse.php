@@ -14,5 +14,5 @@ if ($id == 0) {
     $courses->max_degree = safeGet("max_degree");
     $courses->save();
 }
-header('Location: ../courses.php');
+header('Location: ../view/teacher/courses.php');
 ?>

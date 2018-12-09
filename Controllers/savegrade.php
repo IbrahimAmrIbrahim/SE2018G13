@@ -14,8 +14,8 @@ $grades->examine_at = safeGet("examine_at");
 $grades->save();
 
 if ($page == "std") {
-    header('Location: ../students.php');
+    header('Location: ../view/teacher/students.php');
 } else if ($page == "crs") {
-    header('Location: ../courses.php');
+    header('Location: ../view/teacher/courses.php');
 }
 ?>

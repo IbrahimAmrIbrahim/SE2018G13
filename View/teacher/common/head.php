@@ -17,4 +17,5 @@
     <!-- Custom styles for this template -->
     <link href="../../Style/css/common.css" rel="stylesheet">
     <link href="../../Style/css/card.css" rel="stylesheet">
+    <link href="../../Style/css/tables.css" rel="stylesheet">
 </head>
