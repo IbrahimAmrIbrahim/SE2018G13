@@ -4,10 +4,10 @@ class Database {
 
     protected static $db = null;
 
-    public static function connect($database, $uid, $pwd) {
-        if (!empty(Database::$db))
+    private static function connect($database, $uid, $pwd) {
+        if (!empty(Database::$db)) {
             return;
-
+        }
         $dsn = "mysql:host=localhost;dbname=$database";
 
         try {
@@ -18,13 +18,14 @@ class Database {
     }
 
     public function get($field) {
-        if (isset($this->{$field}))
+        if (isset($this->{$field})) {
             return $this->{$field};
+        }
         return null;
     }
 
     public static function DBConnect() {
-        Database::connect('school', 'root', '');
+        Database::connect('lms', 'root', '');
     }
 
 }
