@@ -23,7 +23,7 @@
     <body >
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <button id="menu-toggle" type="button" class="btn btn-outline-success"><i class="fas fa-bars"></i></button>
-            <a class="navbar-brand" style="padding-left: 10px" href="./index.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
+            <a class="navbar-brand" style="padding-left: 10px" href="../index.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown no-arrow">
                     <button class="btn Navbtn dropdown-toggle" id="userDropdown"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../Images/User.png" class="rounded-circle" alt="User Img" width="30px" height="30px">&nbsp; &nbsp; General</button>
@@ -31,7 +31,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="../index.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
                         <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
-                        <a class="dropdown-item"  data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
+                        <a class="dropdown-item" href="signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
                         <a class="dropdown-item" href="./about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
                     </div>
                 </li>
@@ -49,7 +49,7 @@
                         <a data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; sign in</a>
                     </li>
                     <li>
-                        <a data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
+                        <a href="signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
                     </li>
                     <li>
                         <a href="./about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
@@ -84,16 +84,6 @@
                             </div>
                         </div>
 
-                        <!-- The Modal -->
-                        <div class="modal fade" id="signupModal">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content" style="background-color: #330066">
-                                    <div class="modal-body">
-                                        <?php include_once('./generalSignup.php') ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

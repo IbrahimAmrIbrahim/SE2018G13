@@ -30,7 +30,7 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
-                        <a class="dropdown-item"  data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
+                        <a class="dropdown-item"  href="./View/signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
                         <a class="dropdown-item" href="./view/about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
                         <a class="dropdown-item" href="./view/contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
                     </div>
@@ -46,7 +46,7 @@
                         <a data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; sign in</a>
                     </li>
                     <li>
-                        <a data-toggle="modal" data-target="#signupModal" href="#"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
+                        <a href="./View/signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
                     </li>
                     <li>
                         <a href="./view/about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
@@ -62,6 +62,19 @@
                 <div class="container-fluid">
 
                     <div class="container">
+                        <?php
+                        include_once("Controllers/common.php");
+                        $status = safeGet("status", "");
+                        if ($status == "wrong") {
+                            ?>
+                            <div class="alert alert-danger alert-dismissible">
+                                <strong>Wrong user name or password</strong> <br>
+                                Please re-enter username and password.
+                            </div>
+                            <?php
+                        }
+                        ?>
+
                         <h1 class="mt-5"> Welcome everyone to our site </h1>
                         <p>it's for study and mange your time </p>
                         <p>We hope you find it helpful</p>
@@ -71,15 +84,15 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content" style="background-color: #330066; color: #ffffff;">
                                     <div class="modal-body">
-                                        <form action="View/teacher/home.php" method="post" >
+                                        <form action="Controllers/authenticate_user.php" method="POST" >
                                             <div class="row" style="padding-top: 8px">
                                                 <div class="col-md-4" style="text-align: center;">User Name</div>
-                                                <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="" ></div>
+                                                <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="user_name" Required></div>
                                             </div>
 
                                             <div class="row" style="padding-top: 5px">
                                                 <div class="col-md-4" style="text-align: center;">Password</div>
-                                                <div class="col-md-8"><input class="form-control" type ="password"  value="" name ="" ></div>
+                                                <div class="col-md-8"><input class="form-control" type ="password"  value="" name ="password" Required></div>
                                             </div>
 
                                             <div class="row" style="padding-top: 10px">
@@ -92,41 +105,11 @@
                                             <div class="col-md-7" ></div>
                                             <div class="col-md-5" style=" text-align: right; font-size: 10pt"><a href="" style="color: red;">Forget my password!</a></div>
                                         </div>
-                                        <form  action="View/student/home.php" method="post">
-                                            <div class="row" style="padding-top: 10px">
-                                                <div class="col-md-6" ></div>
-                                                <div class="col-md-6"><button class="btn btn-outline-success form-control" type="submit">Log in as student</button></div>
-                                            </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- The Modal -->
-                        <div class="modal fade" id="signupModal">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content" style="background-color: #330066;color: #ffffff;">
-                                    <div class="modal-body">
-                                        <div class="row" style="padding-top: 5px">
-                                            <div class="col-md-12" style="text-align: center;">Sign up as</div>
-                                        </div>
-                                        <div class="row" style="padding-top: 10px">
-                                            <div class="col-md-6" >
-                                                <form action="View/teacher/signup.php" method="post">
-                                                    <button class="btn btn-outline-success form-control" type="submit">Teacher</button>
-                                                </form>
-                                            </div>
-                                            <div class="col-md-6" >
-                                                <form action="View/student/signup.php" method="post">
-                                                    <button class="btn btn-outline-success form-control" type="submit">Student</button>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
