@@ -2,7 +2,13 @@
 include_once('../../Controllers/common.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/grade.php');
+
+include_once('../../Models/user.php');
 Database::DBConnect();
+$id = safeGet('id');
+
+$user = new User($id);
+
 ?>
 
 <!DOCTYPE html>
