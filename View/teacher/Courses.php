@@ -21,24 +21,12 @@ $user = new User($id); // get the user id
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div role="main" class="container">
-                    <table class="table" style="margin-top: 20px">
-                        <thead >
-                            <tr id="StudentTable_th">
-                                <th scope="col">Course ID
-                                   
-                                </th>
-                                <th scope="col">Course Name
-                                  
-                                </th>
-                                <th scope="col" style="padding-bottom: 18px">Study Year</th>
-                                <th scope="col">Max Degree
-                                   
-                                </th>
-                                <th scope="col" style="padding-bottom: 18px">Description</th>
-                                <th scope="col" style="padding-bottom: 18px">Type</th>
-                                <th scope="col" style="padding-bottom: 18px"><button class="add_course" id="0"> Add New Course</button> </th>
-                            </tr>
-
+                 
+                                     
+                    <div class="card-deck table">
+                    
+                           
+                            
                             <?php
                             //$grades = Grade::std_all(7, NULL, NULL);
                             $gradenum = 0;
@@ -53,19 +41,38 @@ $user = new User($id); // get the user id
                                     $valid="private";
                                 }
                                 ?>
-                                <tr id="GardeTable_tr">
-                                    <td class="<?= 7 ?>gradeCrsID<?= $gradenum ?>"><?= $course->id ?></td>
-                                    <td class="<?= 7 ?>gradeCrsName<?= $gradenum ?>"><?= $course->name ?></td>
-                                    <td class="<?= 7 ?>gradeDegree<?= $gradenum ?>"><?= $course->study_year ?></td>
-                                     <td class="<?= 7 ?>gradeCrsID<?= $gradenum ?>"><?= $course->max_degree ?></td>
-                                    <td class="<?= 7 ?>gradeCrsName<?= $gradenum ?>"><?= $course->description ?></td>
-                                    <td class="<?= 7 ?>gradeDegree<?= $gradenum ?>"><?= $valid ?></td>
-                                    <td > <button class="show_details" id2=<?= $user->ID?> id=<?= $course->id ?>  > Show Details </button></td>
-                                   
-                                </tr>
+                                
+                    <div class="card" >
+                            <div class="card student_attendance" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 )">
+                                  <div class="card-body text-center">
+                                      <h1><?= $course->name ?></h1>
+                                    <p class="card-text"> course id : <?= $course->id ?> </p>
+                                    <p class="card-text">course study year : <?= $course->study_year ?> </p>
+                                     <p class="card-text">course max degree : <?= $course->max_degree ?> </p>
+                                      <p class="card-text">course type : <?= $valid ?> </p>
+                                      <p class="card-text">course description :-</p>
+                                      <p><?= $course->description ?> </p>
+                                      
+                                        <button class="show_details" id2=<?= $user->ID?> id=<?= $course->id ?>  > Show Details </button>
+                                    </div>
+                                        </div> 
+                                     </div>
+                                
                             <?php } ?>
-                        </thead>
-                    </table>
+                  
+                            </div>
+                    
+                    
+                    
+                    
+                  
+                    
+                    
+                    
+                    
+                    
+                    </div>
+                        
                 </div>
             </div>
         </div>
