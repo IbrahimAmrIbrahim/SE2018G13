@@ -17,9 +17,9 @@ class Courses extends Database {
         }
     }
 
-    public static function add($name, $study_year, $max_degree) {
-        $sql = "INSERT INTO courses (name,study_year,max_degree) VALUES (?,?,?)";
-        Database::$db->prepare($sql)->execute([$name, $study_year, $max_degree]);
+    public static function add($name, $study_year, $max_degree ,$description,$type,$teacher_id) {
+        $sql = "INSERT INTO courses (name,study_year,max_dxegree,description, type,teacher_id) VALUES (?,?,?,?,?,?);";
+        Database::$db->prepare($sql)->execute([$name, $study_year, $max_degree ,$description,$type,$teacher_id]);
     }
 
     public function delete() {
@@ -46,10 +46,23 @@ class Courses extends Database {
     }
 
     public function save() {
-        $sql = "UPDATE courses SET name = ?,study_year = ?,max_degree=? WHERE id = ?;";
-        Database::$db->prepare($sql)->execute([$this->name, $this->study_year, $this->max_degree, $this->id]);
+        $sql = "UPDATE courses SET name = ?,study_year = ?,max_degree=?, description= ? ,type=? ,teacher_id=? WHERE id = ?;";
+        Database::$db->prepare($sql)->execute([$this->name, $this->study_year, $this->max_degree,$this->description,$this->type,$this->teacher_id, $this->id]);
     }
 
+    // function return teacher courses depending on the teacher id  all in 1 array of courses
+    public function show_my_courses($teacher_id) {
+        $sql = "SELECT * FROM courses WHERE teacher_id= $teacher_id ;";
+        $statement = Database::$db->prepare($sql);
+        $statement->execute();
+        $courses = [];
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $courses[] = new Courses($row['id']);
+        }
+        return $courses;
+    }
+    
+    
 }
 
 ?>
