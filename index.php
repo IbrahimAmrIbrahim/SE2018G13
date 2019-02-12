@@ -1,95 +1,135 @@
-<?php include_once('database.php');?>
 <!DOCTYPE html>
-<html>
-<head>
-     <title></title>
-     <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap.min.css">
-     <script type="text/javascript" src="bootstrap/jquery.min.js"></script>
-</head>
-<body>
-	<div class="panel panel-default container">
-	<div class="panel-heading">
-		<h1 style="text-align: center;">Students Attendance</h1>
-	</div>	
-	<div class="panel-body">
-	<a href="view.php" class="btn btn-primary">View</a>
-	<a href="add.php" class="btn btn-primary pull-right">Add</a>
-	<form method="post">	
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Father name</th>
-				<th>Email</th>
-				<th>Attendance</th>
-			</tr>
-		</thead>
-		<tbody>
-		<?php
-		        $query="select * from student";
-		        $result=$link->query($query);
-		        while($show=$result->fetch_assoc()) 
-		        {
-		?>
-			<tr>
-				<td><?php echo $show['name']; ?></td>
-				<td><?php echo $show['fname']; ?></td>
-				<td><?php echo $show['email']; ?></td>
-				<td>
-					Present<input required type="radio" name="attendance[<?php echo $show['student_id']; ?>]" value="Present">Absent<input required type="radio" name="attendance[<?php echo $show['student_id']; ?>]" value="Absent" type="text">
-				</td>
-			</tr>
-			<?php } ?>
-			</tbody>
-		<?php
-                     if($_SERVER['REQUEST_METHOD']=='POST'){
-                     	$att=$_POST['attendance'];
-                     	$date=date('d-m-y');
-                     	$query="select distinct datee from date";
-                     	$result=$link->query($query);
-                     	$b=false;
-                     	if($result->num_rows>0){
-                     	while ( $check=$result->fetch_assoc()) {
-                     		if($date==$check['datee']){
-                     			echo"<div class='alert alert alert-danger'> Attendance already taken today !!</div>";
-                     			$b=true;
-                     		}
-                     		
-                     	}
-                     }
-                     	if(!$b){
+<html lang= "en">
 
-                     		    foreach ($att as $key => $value) {
-                     		    	if($value=="Present"){
-                     		    		$query="insert into date(value,student_id,datee) values('Present',$key,'$date')";
-                     		    		$insertResult=$link->query($query);
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="./Images/chalkboard-teacher-solid.ico">
+
+        <title>LMS</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="./Style/Bootstrap/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <link href="./Style/fontawesome/css/all.min.css" rel="stylesheet" type="text/css">
+
+        <!-- Custom styles for this template -->
+        <link href="./Style/css/common.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <button id="menu-toggle" type="button" class="btn btn-outline-success"><i class="fas fa-bars"></i></button>
+            <a class="navbar-brand" style="padding-left: 10px" href="./index.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown no-arrow">
+                    <button class="btn Navbtn dropdown-toggle" id="userDropdown"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="./Images/User.png" class="rounded-circle" alt="User Img" width="30px" height="30px">&nbsp; &nbsp; General</button>
+
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
+                        <a class="dropdown-item"  href="./View/signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
+                        <a class="dropdown-item" href="./view/about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                        <a class="dropdown-item" href="./view/contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="wrapper">
+
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li>
+                        <a data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; sign in</a>
+                    </li>
+                    <li>
+                        <a href="./View/signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
+                    </li>
+                    <li>
+                        <a href="./view/about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                    </li>
+                    <li>
+                        <a href="./view/contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
+                    </li>
+                </ul>
+            </div>
 
 
-                     		    	}
-                     		    	else
-                     		    	{
-                     		    		$query="insert into date(value,student_id,datee) values('Absent',$key,'$date')";
-                     		    		$insertResult=$link->query($query);
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
 
-                     		    	}
-                     		    }
-                     		    if($insertResult)
-                     		    {
-                     		    	echo"<div class='alert alert alert-success'> Attendance taken successfully !!</div>";
-                     		    }
-                     	}
-                      }
-                     
+                    <div class="container">
+                        <?php
+                        include_once("./Controllers/common.php");
+                        $status = safeGet("status", "");
+                        if ($status == "wrong") {
+                            ?>
+                            <div class="alert alert-danger alert-dismissible">
+                                <strong>Wrong user name or password</strong> <br>
+                                Please re-enter username and password.
+                            </div>
+                            <?php
+                        }
+                        ?>
 
-		?>
-	</table>
-	<input  class="btn btn-primary" type="submit" value="Take Attendance">
-		</form>
-	</div>
-	<div class="panel-footer">
-		
-	</div>
-	</div>
-</body>
-</html>	
-  
+                        <h1 class="mt-5"> Welcome everyone to our site </h1>
+                        <p>it's for study and mange your time </p>
+                        <p>We hope you find it helpful</p>
+
+                        <!-- The Modal -->
+                        <div class="modal fade" id="loginModal">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content" style="background-color: #330066; color: #ffffff;">
+                                    <div class="modal-body">
+                                        <form action="./Controllers/authenticate_user.php" method="POST" >
+                                            <div class="row" style="padding-top: 8px">
+                                                <div class="col-md-4" style="text-align: center;">User Name</div>
+                                                <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="user_name" Required></div>
+                                            </div>
+
+                                            <div class="row" style="padding-top: 5px">
+                                                <div class="col-md-4" style="text-align: center;">Password</div>
+                                                <div class="col-md-8"><input class="form-control" type ="password"  value="" name ="password" Required></div>
+                                            </div>
+
+                                            <div class="row" style="padding-top: 10px">
+                                                <div class="col-md-6" ></div>
+                                                <div class="col-md-3"><button class="btn btn-outline-success form-control" type="submit">Log in</button></div>
+                                                <div class="col-md-3"><button class="btn btn-outline-danger form-control" data-dismiss="modal">Cancel</button></div>
+                                            </div>
+                                        </form>
+                                        <div class="row" style="padding-top: 15px">
+                                            <div class="col-md-7" ></div>
+                                            <div class="col-md-5" style=" text-align: right; font-size: 10pt"><a href="" style="color: red;">Forget my password!</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="footer-copyright text-center py-3">Copyright 2018, Software Engineering Course, ASUENG.</div>
+        </footer>
+    </body>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./Style/Jquery/jquery.min.js"></script>
+    <script src="./Style/Js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        $("#menu-toggle").click(function (e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
+</html>
