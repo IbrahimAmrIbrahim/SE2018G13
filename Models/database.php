@@ -25,8 +25,8 @@ class Database {
     }
 
     public static function DBConnect() {
-       // Database::connect('localhost', 'lms', 'root', '');
-        Database::connect('sql202.epizy.com', 'epiz_23087624_lms', 'epiz_23087624', 'ZWBQKm6hhDxPH');
+        Database::connect('localhost', 'lms', 'root', '');
+        // Database::connect('sql202.epizy.com', 'epiz_23087624_lms', 'epiz_23087624', 'ZWBQKm6hhDxPH');
     }
 
 }

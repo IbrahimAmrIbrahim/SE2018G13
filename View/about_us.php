@@ -32,7 +32,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="../index.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
                         <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
-                        <a class="dropdown-item" href="signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
+                        <a class="dropdown-item" href="./signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
                         <a class="dropdown-item" href="./contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
                     </div>
                 </li>
@@ -50,7 +50,7 @@
                         <a data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; sign in</a>
                     </li>
                     <li>
-                        <a href="signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
+                        <a href="./signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; sign up</a>
                     </li>
                     <li>
                         <a href="./contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
