@@ -51,7 +51,7 @@ class Courses extends Database {
     }
 
     // function return teacher courses depending on the teacher id  all in 1 array of courses
-    public function show_my_courses($teacher_id) {
+    public static function show_my_courses($teacher_id) {
         $sql = "SELECT * FROM courses WHERE teacher_id= $teacher_id ;";
         $statement = Database::$db->prepare($sql);
         $statement->execute();

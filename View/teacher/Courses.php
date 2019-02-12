@@ -6,8 +6,8 @@ include_once('../../Models/grade.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
 $id = safeGet('id');
-
-$user = new User($id);
+$course_id=  Courses::show_my_courses($id);
+$user = new User($id); // get the user id 
 
 ?>
 
@@ -40,17 +40,15 @@ $user = new User($id);
                             </tr>
 
                             <?php
-                            $grades = Grade::std_all(7, NULL, NULL);
+                            //$grades = Grade::std_all(7, NULL, NULL);
                             $gradenum = 0;
-                            foreach ($grades as $grade) {
+                            foreach ($course_id as $course) {
                                 $gradenum = $gradenum + 1;
                                 ?>
                                 <tr id="GardeTable_tr">
-                                    <td class="<?= 7 ?>gradeCrsID<?= $gradenum ?>"><?= $grade->course_id ?></td>
-                                    <td class="<?= 7 ?>gradeCrsName<?= $gradenum ?>"><?= $grade->crs_name ?></td>
-                                    <td class="<?= 7 ?>gradeDegree<?= $gradenum ?>"><?= $grade->degree ?></td>
-                                    <td class="<?= 7 ?>gradeMaxDegree<?= $gradenum ?>"><?= $grade->max_degree ?></td>
-                                    <td class="<?= 7 ?>gradeExamineAt<?= $gradenum ?>"><?= $grade->examine_at ?></td>
+                                    <td class="<?= 7 ?>gradeCrsID<?= $gradenum ?>"><?= $course->name ?></td>
+                                    <td class="<?= 7 ?>gradeCrsName<?= $gradenum ?>"><?= $course->max_degree ?></td>
+                                    <td class="<?= 7 ?>gradeDegree<?= $gradenum ?>"><?= $course->study_year ?></td>
                                     <td ></td>
                                     <td ></td>
                                 </tr>
