@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <button id="menu-toggle" type="button" class="btn btn-outline-success"><i class="fas fa-bars"></i></button>
-    <a class="navbar-brand" style="padding-left: 10px" href="./home.php"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
+    <a class="navbar-brand" style="padding-left: 10px" href="./home.php?id=<?= $user->ID ?>"><i class="fas fa-chalkboard-teacher"></i> LMS</a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow">
 
@@ -25,7 +25,7 @@
 <div id="wrapper">
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
-            <li class="sidebar-brand" style="color: white;">
+            <li class="sidebar-brand">
             <?= $user->profession?>  <?= $user->Name ?>
             </li>
             <li>
@@ -53,5 +53,3 @@
             </li>
         </ul>
     </div>
-
-

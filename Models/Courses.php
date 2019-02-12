@@ -17,8 +17,9 @@ class Courses extends Database {
         }
     }
 
+    //INSERT INTO courses (name,study_year,max_degree,description, type,teacher_id) VALUES ("phy",2,200,"phy for beginers",1,4);
     public static function add($name, $study_year, $max_degree ,$description,$type,$teacher_id) {
-        $sql = "INSERT INTO courses (name,study_year,max_dxegree,description, type,teacher_id) VALUES (?,?,?,?,?,?);";
+        $sql = "INSERT INTO courses (name,study_year,max_degree,description, type,teacher_id) VALUES (?,?,?,?,?,?);";
         Database::$db->prepare($sql)->execute([$name, $study_year, $max_degree ,$description,$type,$teacher_id]);
     }
 
@@ -51,7 +52,7 @@ class Courses extends Database {
     }
 
     // function return teacher courses depending on the teacher id  all in 1 array of courses
-    public function show_my_courses($teacher_id) {
+    public static function show_my_courses($teacher_id) {
         $sql = "SELECT * FROM courses WHERE teacher_id= $teacher_id ;";
         $statement = Database::$db->prepare($sql);
         $statement->execute();

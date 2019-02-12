@@ -40,6 +40,7 @@ class Grade extends Database {
         Database::$db->prepare($sql)->execute([$this->degree, $this->examine_at, $this->id]);
     }
 
+    // return all of the 1  student courses  
     public static function std_all($id, $cloumn, $order) {
         if ($cloumn == null) {
             $cloumn = "course_id";
@@ -56,7 +57,8 @@ class Grade extends Database {
         }
         return $grades;
     }
-
+    
+    // return all of the 1  course  students  
     public static function crs_all($id, $cloumn, $order) {
         if ($cloumn == null) {
             $cloumn = "student_id";
