@@ -20,6 +20,6 @@
 
     <div class="row" style="padding-top: 15px">
         <div class="col-md-7" ></div>
-        <div class="col-md-5" style=" text-align: right; font-size: 10pt"><a href="" style="color: red;">Forget my password!</a></div>
+        <div class="col-md-5" style=" text-align: right; font-size: 10pt"><a href="./RestorePassword.php" style="color: red;">Forget my password!</a></div>
     </div>
 </div>

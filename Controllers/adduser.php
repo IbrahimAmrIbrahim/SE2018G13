@@ -25,7 +25,7 @@ if (User::searchbyUserName($User_Name) != null) {
     $User_Name_Wrong = 1;
 }
 if (($Password_Wrong == 1) || ($User_Name_Wrong == 1)) {
-    header("Location: ../view/signup.php?User_Name_Wrong=" . $User_Name_Wrong . "&password_Wrong=" . $Password_Wrong);
+    header("Location: ../View/signup.php?User_Name_Wrong=" . $User_Name_Wrong . "&password_Wrong=" . $Password_Wrong);
 } else {
     User::adduser($Full_Name,$Email,$Mobile_No,$Profession,$Department,$School_Collage,$Country,$User_Name,$Password);
     header("Location: ../index.php");
