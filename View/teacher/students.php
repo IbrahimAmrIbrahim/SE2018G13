@@ -3,12 +3,13 @@
 include_once('../../Controllers/common.php');
 include_once('../../Models/student.php');
 include_once('../../Models/grade.php');
+include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
 $id = safeGet('id');
-
+$crs_id=safeGet('crs_id');
 $user = new User($id);
-
+$course=new Courses($crs_id);
 ?>
 
 
@@ -22,8 +23,10 @@ $user = new User($id);
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div role="main" class="container">
-                    <h2 class="mt-5">Students</h2>
-
+                    <h2 class="mt-5"><?= $course->name ?></h2>
+                    <div>
+                        <?=$course->description ?>
+                    </div>
                     <div>
                         <form action="./students.php" class="form-inline">
                                
