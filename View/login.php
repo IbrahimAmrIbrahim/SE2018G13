@@ -1,6 +1,6 @@
 <div style="color: #ffffff" >
 
-    <form action="../Controllers/authenticate_user.php" method="post" >
+    <form action="../Controllers/authenticate_user.php" method="post"  >
         <div class="row" style="padding-top: 8px">
             <div class="col-md-4" style="text-align: center;">User Name</div>
             <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="user_name" Required></div>

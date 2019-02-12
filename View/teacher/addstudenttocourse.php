@@ -2,6 +2,7 @@
 include_once('../../Controllers/common.php');
 include_once('../../Models/student.php');
 include_once('../../Models/grade.php');
+
 Database::DBConnect();
 $id = safeGet('id'); // course id
 $stds = Student::all(NULL, NULL, NULL);

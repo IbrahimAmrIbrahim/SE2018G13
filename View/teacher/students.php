@@ -3,7 +3,12 @@
 include_once('../../Controllers/common.php');
 include_once('../../Models/student.php');
 include_once('../../Models/grade.php');
+include_once('../../Models/user.php');
 Database::DBConnect();
+$id = safeGet('id');
+
+$user = new User($id);
+
 ?>
 
 
@@ -21,6 +26,7 @@ Database::DBConnect();
 
                     <div>
                         <form action="./students.php" class="form-inline">
+                               
                             <div class="input-group" style="width: 100%">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-search"></i></span>
@@ -42,7 +48,7 @@ Database::DBConnect();
                                     <button class="button nameSortbtn"><i class="fas fa-random nameSort"></i></button>
                                 </th>
                                 <th scope="col"  style="padding-bottom: 18px">Grade</th>
-                                <th scope="col"><button class="button float-right edit_student" id="0">Add Student</button></th>
+                                <th scope="col"><button class="button float-right edit_student" id="0" id2="<?=$user->ID?>">Add Student</button></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -121,7 +127,7 @@ Database::DBConnect();
     <script type="text/javascript">
         $(document).ready(function () {
             $('.edit_student').click(function (event) {
-                window.location.href = "editstudent.php?id=" + $(this).attr('id');
+                window.location.href = "editstudent.php?id=" +$(this).attr('id2') +"&&std_id="+ $(this).attr('id');
             });
 
             $('.edit_grade').click(function (event) {
