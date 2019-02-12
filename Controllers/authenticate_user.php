@@ -1,14 +1,12 @@
 <?php
 
-include_once("../Controllers/common.php");
+include_once("./common.php");
 include_once("../Models/user.php");
 Database::DBConnect();
 $user_name = safeGet("user_name", "");
 $password = safeGet("password", "");
-  
-$ID = User::login($user_name, $password);
 
-echo $ID;
+$ID = User::login($user_name, $password);
 
 if ($ID == null) {
     header('Location: ../index.php?status=wrong');
@@ -16,14 +14,12 @@ if ($ID == null) {
     $user = User::user($ID);
 
     if ($user->profession == "School Student" || $user->profession == "Collage Student") {
-     
-        
-        header("Location: ../view/student/home.php?id=$ID");
+        header('Location: ../View/student/home.php?ID='.$ID);
     } else {
-        header("Location: ../view/teacher/home.php?id=$ID");
+        header('Location: ../View/teacher/home.php?ID='.$ID);
     }
 }
 
 
 ?>
- 
+
