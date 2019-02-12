@@ -1,8 +1,11 @@
 <?php
 include_once("../../Controllers/common.php");
 include_once('../../Models/student.php');
-$id = safeGet('id');
+include_once('../../Models/user.php');
 Database::DBConnect();
+$id = safeGet('std_id');
+$id_user = safeGet('id');
+$user = new User($id_user);
 $student = new Student($id);
 ?>
 
@@ -19,8 +22,9 @@ $student = new Student($id);
 
                     <h2 class="mt-5"><?= ($id) ? "Edit" : "Add" ?> Student</h2>
 
-                    <form action="controllers/savestudent.php" method="post">
+                    <form action="../../controllers/savestudent.php" method="post">
                         <input type="hidden" name="id" value="<?= $student->get('id') ?>">
+                         <input type="hidden" name="id_user" value="<?= $user->ID ?>">
                         <div class="card"  style='background: darkslategray ;opacity: .85' >
                             <div class="card-body">
                                 <div class="form-group row gutters">

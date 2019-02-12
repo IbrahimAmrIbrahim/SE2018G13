@@ -25,7 +25,8 @@ class Database {
     }
 
     public static function DBConnect() {
-        Database::connect('lms', 'root', '');
+        Database::connect('lms' , 'root', '');
+       
     }
 
 }

@@ -5,7 +5,7 @@ include_once("../Models/user.php");
 Database::DBConnect();
 $user_name = safeGet("user_name", "");
 $password = safeGet("password", "");
-
+  
 $ID = User::login($user_name, $password);
 
 echo $ID;
@@ -16,11 +16,14 @@ if ($ID == null) {
     $user = User::user($ID);
 
     if ($user->profession == "School Student" || $user->profession == "Collage Student") {
-        header('Location: ../view/student/home.php');
+     
+        
+        header("Location: ../view/student/home.php?id=$ID");
     } else {
-        header('Location: ../view/teacher/home.php');
+        header("Location: ../view/teacher/home.php?id=$ID");
     }
 }
 
 
 ?>
+ 
