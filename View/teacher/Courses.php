@@ -30,7 +30,7 @@ $user = new User($id); // get the user id
                                 <th scope="col">Course Name
                                     <button class="button nameSortbtn"><i class="fas fa-random nameSort"></i></button>
                                 </th>
-                                <th scope="col" style="padding-bottom: 18px">Grade</th>
+                                <th scope="col" style="padding-bottom: 18px">Study Year</th>
                                 <th scope="col">Max Degree
                                     <button class="button yearSortbtn"><i class="fas fa-random yearSort"></i></button>
                                 </th>
@@ -46,7 +46,10 @@ $user = new User($id); // get the user id
                                 $gradenum = $gradenum + 1;
                                 ?>
                                 <tr id="GardeTable_tr">
-                                    <td class="<?= 7 ?>gradeCrsID<?= $gradenum ?>"><?= $course->name ?></td>
+                                    <td class="<?= 7 ?>gradeCrsID<?= $gradenum ?>"><?= $course->id ?></td>
+                                    <td class="<?= 7 ?>gradeCrsName<?= $gradenum ?>"><?= $course->name ?></td>
+                                    <td class="<?= 7 ?>gradeDegree<?= $gradenum ?>"><?= $course->study_year ?></td>
+                                     <td class="<?= 7 ?>gradeCrsID<?= $gradenum ?>"><?= $course->id ?></td>
                                     <td class="<?= 7 ?>gradeCrsName<?= $gradenum ?>"><?= $course->max_degree ?></td>
                                     <td class="<?= 7 ?>gradeDegree<?= $gradenum ?>"><?= $course->study_year ?></td>
                                     <td ></td>
