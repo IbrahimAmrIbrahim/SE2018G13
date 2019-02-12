@@ -37,7 +37,7 @@ class User extends Database {
     }
 
     public static function searchbyUserName($name) {
-        $sql = "SELECT `ID` FROM `authentication` WHERE (User_Name = '$name');";
+        $sql = "SELECT `User_ID` FROM `authentication` WHERE (User_Name = '$name');";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
@@ -46,7 +46,13 @@ class User extends Database {
         if (empty($data)) {
             return null;
         }
-        return 1;
+        return $data['User_ID'];
+    }
+
+    public static function RestorePassword($id, $password) {
+        $sql = "UPDATE `authentication` SET `Password`='$password' WHERE User_ID = $id;";
+        $statement = Database::$db->prepare($sql);
+        $statement->execute();
     }
 
     public static function login($user_name, $password) {
