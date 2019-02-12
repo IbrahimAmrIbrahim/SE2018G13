@@ -63,7 +63,7 @@
 
                     <div class="container">
                         <?php
-                        include_once("Controllers/common.php");
+                        include_once("./Controllers/common.php");
                         $status = safeGet("status", "");
                         if ($status == "wrong") {
                             ?>
@@ -84,7 +84,7 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content" style="background-color: #330066; color: #ffffff;">
                                     <div class="modal-body">
-                                        <form action="Controllers/authenticate_user.php" method="POST" >
+                                        <form action="./Controllers/authenticate_user.php" method="POST" >
                                             <div class="row" style="padding-top: 8px">
                                                 <div class="col-md-4" style="text-align: center;">User Name</div>
                                                 <div class="col-md-8"><input class="form-control" type ="text"  value="" name ="user_name" Required></div>
