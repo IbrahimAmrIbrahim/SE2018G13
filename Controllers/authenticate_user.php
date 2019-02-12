@@ -14,9 +14,9 @@ if ($ID == null) {
     $user = User::user($ID);
 
     if ($user->profession == "School Student" || $user->profession == "Collage Student") {
-        header('Location: ../View/student/home.php?ID='.$ID);
+        header('Location: ../View/student/home.php?id='.$ID);
     } else {
-        header('Location: ../View/teacher/home.php?ID='.$ID);
+        header('Location: ../View/teacher/home.php?id='.$ID);
     }
 }
 

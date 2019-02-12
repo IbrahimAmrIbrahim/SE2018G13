@@ -47,7 +47,7 @@
                         <a href="../index.php"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
                     </li>
                     <li>
-                        <a href="about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
+                        <a href="./about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
                     </li>
                 </ul>
             </div>

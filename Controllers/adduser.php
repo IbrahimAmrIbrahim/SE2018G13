@@ -1,6 +1,6 @@
 <?php
 
-include_once("../Controllers/common.php");
+include_once("./common.php");
 include_once("../Models/user.php");
 Database::DBConnect();
 
