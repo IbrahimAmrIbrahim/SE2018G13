@@ -40,7 +40,7 @@ $user = new User($id); // get the user id
 
                                     <div class="col-sm-10" style="margin-bottom: 10px"></div>
                                     <div class="col-sm-2" style="margin-bottom: 10px">
-                                        <button class="form-control" type='submit'> ADD</button>
+                                        <button class="form-control btn-outline-success" type='submit'> ADD</button>
                                     </div>
                                 </div>
                             </div>
