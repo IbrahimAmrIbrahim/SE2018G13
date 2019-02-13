@@ -95,6 +95,7 @@ class Courses extends Database {
         $statement = Database::$db->prepare($sql);
         $statement->execute();
         $row = $statement->fetch(PDO::FETCH_ASSOC);
+        $coursMaterialInfo = [];
         foreach ($row as $key => $value) {
             $coursMaterialInfo[$key] = $value;
         }
