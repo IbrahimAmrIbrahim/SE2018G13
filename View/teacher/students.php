@@ -29,7 +29,7 @@ $course=new Courses($crs_id);
                         
                         
                         <div class="card-deck table">
-  <div class="card course_material" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
+  <div class="card course_material" id="<?=$id?>" id2="<?=$crs_id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
     <div class="card-body text-center">
         <h3>course materials and files</h3>
       <p class="card-text">you can put files for this course here   </p>
@@ -73,7 +73,7 @@ $course=new Courses($crs_id);
 
                 // material page
             $('.course_material').click(function (event) {
-                 window.location.href = "home.php?id=" +$(this).attr('id') ;//+"&&std_id="+ $(this).attr('id');
+                 window.location.href = "courseMaterial.php?id=" +$(this).attr('id')+"&&crs_id="+ $(this).attr('id2');
             });
                 // student enroll
             $('.student_managment').click(function (event) {
