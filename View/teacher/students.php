@@ -2,7 +2,7 @@
 <?php
 include_once('../../Controllers/common.php');
 include_once('../../Models/student.php');
-include_once('../../Models/grade.php');
+include_once('../../Models/Studentxcourse.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
@@ -29,25 +29,25 @@ $course=new Courses($crs_id);
                         
                         
                         <div class="card-deck table">
-  <div class="card course_material" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 )">
+  <div class="card course_material" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
     <div class="card-body text-center">
         <h3>course materials and files</h3>
       <p class="card-text">you can put files for this course here   </p>
     </div>
   </div>
-   <div class="card student_managment" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 )">
+   <div class="card student_managment" id="<?=$id?>" id2="<?=$crs_id?>"  style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
     <div class="card-body text-center">
         <h3>Student management</h3>
       <p class="card-text">you can mange students from here </p>
     </div>
   </div>
-   <div class="card student_grade" id="<?=$id?>"  style=" background-color: rgba(06 ,44,51,0.85 )">
+   <div class="card student_grade" id="<?=$id?>"  style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
     <div class="card-body text-center">
           <h3>Student grade</h3>
       <p class="card-text">you can edit Students grade for this course</p>
     </div>
   </div>
-<div class="card student_attendance" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 )">
+<div class="card student_attendance" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
     <div class="card-body text-center">
           <h3>Student attendance</h3>
       <p class="card-text">you can mange student attendance </p>
@@ -77,7 +77,7 @@ $course=new Courses($crs_id);
             });
                 // student enroll
             $('.student_managment').click(function (event) {
-                  window.location.href = "home.php?id=" +$(this).attr('id') ;//+"&&std_id="+ $(this).attr('id');
+                  window.location.href = "student_management.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
             });
             
               $('.student_attendance').click(function (event) {
