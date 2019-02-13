@@ -13,6 +13,7 @@
     justify-content: space-between;
     position: relative;
     cursor: default;
+
 }
 
 
@@ -39,6 +40,16 @@
     color: #FF5722;
     font-size: 15px;
 
+}
+
+.materialCard{
+    background-color: rgba(06 ,44,51,0.85);
+    cursor: default;
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
 }
 
 
