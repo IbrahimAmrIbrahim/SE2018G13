@@ -33,9 +33,10 @@ $user = new User($id); // get the user id
                                 <a href="#" class="btn btn-danger delete_material" id="<?= $courseMaterial['id'] ?> ">Delete</a>
                             </div>
                         <?php } ?>
-                        <div class="card-body materialCard AddMaterial" url="./addCourseMaterial.php?id=<?= $id ?>&crs_id=<?= $crs_id ?>" style="cursor: pointer;" >
-                            <p class="card-text">Add Course Material</p>
-                        </div>
+
+                        <a href="#" class="float AddMaterial" url="./addCourseMaterial.php?id=<?= $id ?>&crs_id=<?= $crs_id ?>">
+                            <i class="fa fa-plus my-float"></i>
+                        </a>
                     </div>
                 </div>
             </div>

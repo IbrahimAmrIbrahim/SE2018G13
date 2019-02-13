@@ -7,11 +7,11 @@ include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
 $id = safeGet('id');
-$crs_id=safeGet('crs_id');
+$crs_id = safeGet('crs_id');
 $user = new User($id);
-$course=new Courses($crs_id);
+$course = new Courses($crs_id);
 $students = Studentxcourse::teacher_show_my_students($crs_id);
-$grades = new Studentxcourse($crs_id)
+$grades = Studentxcourse::all($crs_id);
 ?>
 
 
@@ -26,48 +26,48 @@ $grades = new Studentxcourse($crs_id)
             <div class="container-fluid">
                 <div role="main" class="container">
                     <h1 class="mt-5  "><?= $course->name ?></h1>
-                    
-                    <div>
-                        
-                        <table class="table">
-                                            <thead>
-                                                <tr id="GardeTable_th">
-                                                    <th scope="col">Student ID  </th>
-                                                               
-                                                    <th scope="col">Student Name  </th>
-                                                    
-                                                    <th scope="col">Student degree  </th>
-                                                    
-                                                    
-                                                      
-                                                </tr>
-                                            </thead>
-                                            
-                                                    <tbody>
-                          <?php
-                        //$grades = Grade::std_all(7, NULL, NULL);
-                        
-                        foreach ($grades as $grade ) {
-                            
-                           
-                           echo $grade;
-                           
-                           echo "------------";
-                         ?>
 
-                           <tr id="GardeTable_tr">
+                    <div>
+
+                        <table class="table">
+                            <thead>
+                                <tr id="GardeTable_th">
+                                    <th scope="col">Student ID  </th>
+
+                                    <th scope="col">Student Name  </th>
+
+                                    <th scope="col">Student degree  </th>
+
+
+
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <?php
+                                //$grades = Grade::std_all(7, NULL, NULL);
+
+                           
+                                foreach ($grades as $grade)
+
+                                    echo $grade['Name'];
+
+                                    echo "------------";
+                                    ?>
+
+                                    <tr id="GardeTable_tr">
                                         <td > </td>
                                         <td></td>
-                                          
-                                        <td>  <button class="add_student" id="<?=$id?>" id2="<?=$crs_id?>" id3="<?= $grade->std_id ?>" >Edit student</button>  </td>
-                                
-                           <?php } ?>
-                                                            </tbody>
+
+                                        <td>  <button class="add_student" id="<?= $id ?>" id2="<?= $crs_id ?>" id3="<?= $grade->std_id ?>" >Edit student</button>  </td>
+
+                                   
+                            </tbody>
                         </table>
-                        
-                 
+
+
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -77,23 +77,23 @@ $grades = new Studentxcourse($crs_id)
 
 
     <script type="text/javascript">
-                // open edit grade page
+        // open edit grade page
         $(document).ready(function () {
-            $('.add_student').click( function (event) {
-                window.location.href = "editstudent.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2')+"&&std_id="+ $(this).attr('id3');
+            $('.add_student').click(function (event) {
+                window.location.href = "editstudent.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2') + "&&std_id=" + $(this).attr('id3');
             });
 
-            
-            
-             
 
-          
-            });
 
-        
 
-            
-        
+
+
+        });
+
+
+
+
+
 
         function gradeViewSort($ID, $col, $ord) {
             var stdID = $ID;
