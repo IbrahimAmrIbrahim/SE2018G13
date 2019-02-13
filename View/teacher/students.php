@@ -41,13 +41,13 @@ $course=new Courses($crs_id);
       <p class="card-text">you can mange students from here </p>
     </div>
   </div>
-   <div class="card student_grade" id="<?=$id?>"  style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
+   <div class="card student_grade" id="<?=$id?>" id2="<?=$crs_id?>"  style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
     <div class="card-body text-center">
           <h3>Student grade</h3>
       <p class="card-text">you can edit Students grade for this course</p>
     </div>
   </div>
-<div class="card student_attendance" id="<?=$id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
+<div class="card student_attendance" id="<?=$id?>" id2="<?=$crs_id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
     <div class="card-body text-center">
           <h3>Student attendance</h3>
       <p class="card-text">you can mange student attendance </p>
@@ -68,7 +68,7 @@ $course=new Courses($crs_id);
                 // open edit grade page
         $(document).ready(function () {
             $('.student_grade').click( function (event) {
-                window.location.href = "home.php?id=" +$(this).attr('id') ;//+"&&std_id="+ $(this).attr('id');
+                 window.location.href = "students_grade.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
             });
 
                 // material page
@@ -81,7 +81,7 @@ $course=new Courses($crs_id);
             });
             
               $('.student_attendance').click(function (event) {
-               window.location.href = "home.php?id=" +$(this).attr('id') ;//+"&&std_id="+ $(this).attr('id');
+               window.location.href = "students_grade.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
             });
 
           
