@@ -3,29 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/XamppServer/htdocs/lms/Controllers/deletecourses.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/student/Courses.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Models/student.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/common/Navbar.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/login.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/Courses.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Controllers/savecourse.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Controllers/savestudent.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/index.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/editcourse.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Controllers/addnewcourse.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/home.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Controllers/authenticate_user.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/editstudent.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Database/school.sql</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Models/Courses.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Models/user.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/addstudenttocourse.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/Models/database.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/files_Annoucments.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/common/head.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/editgrade.php</file>
-            <file>file:/F:/XamppServer/htdocs/lms/View/teacher/students.php</file>
+            <file>file:/E:/Faculty%20of%20Engineering%20Ain%20Shams%20University/3rd%20CSE%202018%20-%202019/1st%20Term/Lectures/Software%20Engineering/Project/LMS/View/teacher/common/Navbar.php</file>
+            <file>file:/E:/Faculty%20of%20Engineering%20Ain%20Shams%20University/3rd%20CSE%202018%20-%202019/1st%20Term/Lectures/Software%20Engineering/Project/LMS/View/about_us.php</file>
+            <file>file:/E:/Faculty%20of%20Engineering%20Ain%20Shams%20University/3rd%20CSE%202018%20-%202019/1st%20Term/Lectures/Software%20Engineering/Project/LMS/Style/css/tables.css</file>
+            <file>file:/E:/Faculty%20of%20Engineering%20Ain%20Shams%20University/3rd%20CSE%202018%20-%202019/1st%20Term/Lectures/Software%20Engineering/Project/LMS/Style/css/card.css</file>
         </group>
     </open-files>
 </project-private>
