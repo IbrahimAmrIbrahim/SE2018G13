@@ -71,22 +71,3 @@
     margin-top:22px;
 }
 
-
-.editfloat{
-    position: relative;
-    
-    width:60px;
-    height:60px;
-    
-    top:60px;
-    left:40px;
-    
-    background-color: rgba(06 ,44,51,0.85 );
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    box-shadow: 2px 2px 3px #999;
-    cursor: pointer;
-}
-
-
