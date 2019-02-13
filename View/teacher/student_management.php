@@ -34,7 +34,8 @@ $students = Studentxcourse::teacher_show_my_students($crs_id)
                                                     <th scope="col">Student ID  </th>
                                                                
                                                     <th scope="col">Student Name  </th>
-                                                      
+                                                    <th scope="col">
+                                                        <button class="add_student" id="<?=$id?>" id2="<?=$crs_id?>" >Add student</button>  </th>
                                                 </tr>
                                             </thead>
                                             
@@ -49,7 +50,7 @@ $students = Studentxcourse::teacher_show_my_students($crs_id)
                            <tr id="GardeTable_tr">
                                         <td class="<?= $student->id ?>gradeCrsID<?= $gradenum ?>"><?= $student->ID ?></td>
                                         <td class="<?= $student->id ?>gradeCrsName<?= $gradenum ?>"><?= $student->Name ?></td>
-                                 
+                                        <td></td>
                                 
                            <?php } ?>
                                                             </tbody>
@@ -69,22 +70,13 @@ $students = Studentxcourse::teacher_show_my_students($crs_id)
     <script type="text/javascript">
                 // open edit grade page
         $(document).ready(function () {
-            $('.student_grade').click( function (event) {
-                window.location.href = "home.php?id=" +$(this).attr('id') ;//+"&&std_id="+ $(this).attr('id');
+            $('.add_student').click( function (event) {
+                window.location.href = "editstudent.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
             });
 
-                // material page
-            $('.course_material').click(function (event) {
-                 window.location.href = "home.php?id=" +$(this).attr('id') ;//+"&&std_id="+ $(this).attr('id');
-            });
-                // student enroll
-            $('.student_managment').click(function (event) {
-                  window.location.href = "student_management.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
-            });
             
-              $('.student_attendance').click(function (event) {
-               window.location.href = "home.php?id=" +$(this).attr('id') ;//+"&&std_id="+ $(this).attr('id');
-            });
+            
+             
 
           
             });

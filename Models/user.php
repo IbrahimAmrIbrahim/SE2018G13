@@ -68,4 +68,21 @@ class User extends Database {
         return $data['User_ID'];
     }
 
+    public static function all($keyword, $cloumn, $order) {
+        if ($cloumn == null) {
+            $cloumn = "id";
+        }
+        if ($order == null) {
+            $order = "ASC";
+        }
+        $keyword = str_replace(" ", "%", $keyword);
+        $sql = "SELECT * FROM users WHERE User_Name like ('%$keyword%')  ORDER BY $cloumn $order;";
+        $statement = Database::$db->prepare($sql);
+        $statement->execute();
+        $students = [];
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $students[] = new User($row['ID']);
+        }
+        return $students;
+    }
 }
