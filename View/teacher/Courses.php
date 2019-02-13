@@ -1,7 +1,7 @@
 <?php
 include_once('../../Controllers/common.php');
 include_once('../../Models/Courses.php');
-include_once('../../Models/grade.php');
+include_once('../../Models/Studentxcourse.php');
 
 include_once('../../Models/user.php');
 Database::DBConnect();
@@ -36,7 +36,7 @@ $user = new User($id); // get the user id
                             ?>
 
                             <div class="card" >
-                                <div class="card student_attendance" id="<?= $id ?>" style=" background-color: rgba(06 ,44,51,0.85 );margin: 0;">
+                                <div class="card " id="<?= $id ?>" style=" background-color: rgba(06 ,44,51,0.85 );margin: 0;">
                                     <div class="card-body text-center">
                                         <h1><?= $course->name ?></h1>
                                         <p class="card-text"> course id : <?= $course->id ?> </p>

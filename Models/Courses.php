@@ -65,6 +65,11 @@ class Courses extends Database {
     }
     
     
+      // function return student courses depending on the student  grade all in 1 array of courses
+     
+    
+    
+    
 }
 
 ?>
