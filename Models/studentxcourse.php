@@ -3,18 +3,7 @@ include_once('database.php');
 
 class Studentxcourse extends Database {
 
-    function __construct($id) {
-        $sql = "SELECT studentxcourse.* FROM studentxcourse join users ON studentxcourse.std_id= users.ID WHERE studentxcourse.crs_id = $id;";
-        $statement = Database::$db->prepare($sql);
-        $statement->execute();
-        $data = $statement->fetch(PDO::FETCH_ASSOC);
-        if (empty($data)) {
-            return;
-        }
-        foreach ($data as $key => $value) {
-            $this->{$key} = $value;
-        }
-    }
+    
 
     //INSERT INTO courses (name,study_year,max_degree,description, type,teacher_id) VALUES ("phy",2,200,"phy for beginers",1,4);
     // ty[e 0 = private

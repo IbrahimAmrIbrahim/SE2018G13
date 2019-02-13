@@ -50,7 +50,7 @@ $grades = new Studentxcourse($crs_id)
                         foreach ($grades as $grade ) {
                             
                            
-                           echo $grade;
+                           echo $grade->Name;
                            
                            echo "------------";
                          ?>
