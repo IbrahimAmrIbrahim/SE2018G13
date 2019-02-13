@@ -4,7 +4,7 @@ include_once('database.php');
 class Studentxcourse extends Database {
 
     function __construct($id) {
-        $sql = "SELECT * FROM studentxcourse WHERE crs_id = $id;";
+        $sql = "SELECT studentxcourse.* FROM studentxcourse join users ON studentxcourse.std_id= users.ID WHERE studentxcourse.crs_id = $id;";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
@@ -42,6 +42,7 @@ class Studentxcourse extends Database {
              return;   
          }
         
+         
        //
        //  SELECT * FROM studentxcourse WHERE crs_id =$crs_id  AND std_id=$std_id
         $sql3 = "INSERT INTO studentxcourse (crs_id, std_id, grade ,examine_date) VALUES (?,?,?,?);";
@@ -71,6 +72,7 @@ class Studentxcourse extends Database {
         return $courses;
     }
 
+    
     public function save() {
         $sql = "UPDATE studentxcourse SET crs_id=?,examine_date=?, grade = ?,std_id=? WHERE id = ?;";
             Database::$db->prepare($sql)->execute([$this->crs_id, $this->emaxine_date, $this->grade,$this->std_id, $this->id]);
@@ -100,7 +102,17 @@ class Studentxcourse extends Database {
         return $user;
     }
     
- 
+ //get specific degree
+     public static function get_degree($student_id) {
+        $sql = "SELECT  courses.*  FROM studentxcourse JOIN courses on studentxcourse.crs_id=courses.id AND studentxcourse.std_id=  $student_id ;";
+        $statement = Database::$db->prepare($sql);
+        $statement->execute();
+        $courses = [];
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $courses[] = new Courses($row['id']);
+        }
+        return $courses;
+    }
     
     
 }
