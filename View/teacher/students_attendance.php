@@ -2,9 +2,11 @@
 <?php
 include_once('../../Controllers/common.php');
 include_once('../../Models/student.php');
+include_once('../../Models/attendance.php');
 include_once('../../Models/Studentxcourse.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
+
 Database::DBConnect();
 $id = safeGet('id');
 $crs_id = safeGet('crs_id');
@@ -36,10 +38,18 @@ $grades = Studentxcourse::all($crs_id);
 
                                     <th scope="col">Student Name  </th>
 
-                                    <th scope="col">Student degree  </th>
+                                    <th scope="col">Attendance points  </th>
                                     
-                                       <th scope="col">Examine date</th>
-                                       <th></th>
+                                   
+                                    <th></th  >
+                                    <th></th>
+                                    <th></th>
+                                    <th></th  > <th></th  > <th></th  > <th></th  >
+                                     
+                                    <th></th  > <th></th  > <th></th  > <th></th  > <th></th  >
+                                    <th></th  > <th></th  > 
+                                    <th><button>save</button></th>
+                                       
 
 
                                 </tr>
@@ -51,20 +61,34 @@ $grades = Studentxcourse::all($crs_id);
 
                                     if(!empty($grades)){
                                         
-                                    
+                                    $j=0;
                                 foreach ($grades as $grade){
 
-                                  
+                                  $j=$j+1;
                                        $number=$grade['std_id'];
+                                    $attendance= new Attendance($grade['crs_id'], $grade['std_id']);
                                     
                                     ?>
 
                                     <tr id="GardeTable_tr">
                                         <td> <?= $number?> </td>
                                         <td>   <?=  $grade['Name']?> </td>
-                                        <td> <?=  $grade['grade']?></td>
-                                         <td> <?=  $grade['examine_date']?></td>
-                                        <td>  <button class="edit_grade" id="<?= $id ?>" id2="<?= $crs_id ?>" id4="<?=$number?>" >Edit Grade</button>
+                                       
+                                         <td> <?=  $attendance->points?></td>
+                                         <td  >Points</td>
+                                        <td>  
+                                        </td>
+                                        <?php 
+                                        for($i=0;$i<12;$i=$i+1)
+                                        
+                                        {
+                                        ?>
+                                        <td>
+                            <input type="checkbox" id="<?=$i?><?=$j?>" class="checkbox" name="checkbox<?=$i?>" value="ON" />
+                                        </td>
+                                        <?php }?>
+                                        <td>
+                                            
                                         </td>
 
                                     <?php } }?>
@@ -87,10 +111,12 @@ $grades = Studentxcourse::all($crs_id);
         // open edit grade page
         $(document).ready(function () {
             $('.edit_grade').click(function (event) {
-                window.location.href = "./editgrade.php?id="+$(this).attr('id')+"&&crs_id="+$(this).attr('id2')+"&&std_id="+$(this).attr('id4');
+                window.location.href = "./editattendance.php?id="+$(this).attr('id')+"&&crs_id="+$(this).attr('id2')+"&&std_id="+$(this).attr('id4');
             });
 
-
+  $('.checkbox').click(function (event) {
+                window.location.href = "./editattendance.php?id="+$(this).attr('id')+"&&crs_id="+$(this).attr('id2')+"&&std_id="+$(this).attr('id4');
+            });
 
 
 
@@ -100,6 +126,18 @@ $grades = Studentxcourse::all($crs_id);
 
 
 
+function myFunction() {
+  // Get the checkbox
+  var checkBox = document.getElementsByClassName(checkbox));
+  // Get the output text
+ 
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
 
 
         function gradeViewSort($ID, $col, $ord) {

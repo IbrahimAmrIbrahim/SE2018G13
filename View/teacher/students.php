@@ -81,7 +81,7 @@ $course=new Courses($crs_id);
             });
             
               $('.student_attendance').click(function (event) {
-               window.location.href = "students_grade.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
+               window.location.href = "students_attendance.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
             });
 
           

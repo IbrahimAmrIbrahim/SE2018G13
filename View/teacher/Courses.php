@@ -21,6 +21,10 @@ $user = new User($id); // get the user id
             <div class="container-fluid">
                 <div role="main" class="container">
 
+                    <a href="./editcourse.php?id=<?= $id ?>" class="float">
+                        <i class="fa fa-plus my-float"></i>
+                    </a>
+
                     <div class="card-deck table">
                         <?php
                         //$grades = Grade::std_all(7, NULL, NULL);
@@ -47,6 +51,9 @@ $user = new User($id); // get the user id
                                         <p><?= $course->description ?> </p>
 
                                         <button class="show_details" id2=<?= $user->ID ?> id=<?= $course->id ?>  > Show Details </button>
+                                        <a href="./editcourse.php?id=<?= $id ?>" class="editfloat">
+                                            <i class="fa fa-plus"></i>
+                                        </a>
                                     </div>
                                 </div> 
                             </div>

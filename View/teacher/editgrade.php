@@ -1,10 +1,16 @@
 <?php
-include_once("../../Controllers/common.php");
-include_once('../../Models/grade.php');
-$id = safeGet('id');
-$page = safeGet('page');
+include_once('../../Controllers/common.php');
+include_once('../../Models/student.php');
+include_once('../../Models/Studentxcourse.php');
+include_once('../../Models/Courses.php');
+include_once('../../Models/user.php');
 Database::DBConnect();
-$grades = new Grade($id, "std");
+$crs_id = safeGet('crs_id');
+$id_user = safeGet('id');
+$std_id= safeGet('std_id');
+$user = new User($id_user);
+$student = new User($std_id);
+$grade = new Studentxcourse($crs_id,$std_id);
 ?>
 
 <!DOCTYPE html>
@@ -18,76 +24,58 @@ $grades = new Grade($id, "std");
             <div class="container-fluid">
                 <div role="main" class="container">
 
-                    <h2 class="mt-4">Edit Grade</h2>
-
-                    <form action="controllers/savegrade.php" method="post" id="form">
-                        <input type="hidden" name="id" value="<?= $grades->get('id') ?>">
-                        <input type="hidden" name="page" value="<?= $page ?>">
-
-                        <div class="card"  style="background: #002752">
+                    <h2 class="mt-5">Edit Grade for : <?= $student->Name ?> </h2>
+                    
+                    <form action="../../controllers/savegrade.php" method="get">
+                        
+                       <input type="hidden" name="id" value="<?= $id_user?>">
+                      <input type="hidden" name="crs_id" value="<?= $crs_id ?>">
+                      <input type="hidden" name="std_id" value="<?= $std_id ?>">
+                        <div class="card"  style='background: darkslategray ;opacity: .85' >
                             <div class="card-body">
                                 <div class="form-group row gutters">
-
-                                    <label  for="stdinput" class="col-sm-2 col-form-label">Student Name</label>
-                                    <div class="col-sm-10" style="margin-bottom: 10px">
-                                        <input class="form-control" id="stdinput" type="text"  value="<?= $grades->get('std_name') ?>" disabled>
-                                    </div>
-
-                                    <label  for="crsinput" class="col-sm-2 col-form-label">Course Name</label>
-                                    <div class="col-sm-10" style="margin-bottom: 10px">
-                                        <input class="form-control" id="crsinput" type="text"  value="<?= $grades->get('crs_name') ?>" disabled>
-                                    </div>
-                                    <label  for="maxGradeinput" class="col-sm-2 col-form-label">Max Grade</label>
-                                    <div class="col-sm-10" style="margin-bottom: 10px">
-                                        <input class="form-control" id="maxGradeinput" type="text"  value="<?= $grades->get('max_degree') ?>" disabled>
-                                    </div>
-                                    <label  for="degreeinput" class="col-sm-2 col-form-label">Degree</label>
-                                    <div class="col-sm-10" style="margin-bottom: 10px">
-                                        <input class="form-control" id="degreeinput" type="text" name="degree" value="<?= $grades->get('degree') ?>" required>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <div class="alert alert-danger col-sm-8" role="alert" style="margin-bottom: 10px; margin-left: 200px">
-                                            <strong>Error!</strong> Wrong Degree Value.
-                                        </div>     
-                                    </div>
-                                    <label for="examineAtinput" class="col-sm-2 col-form-label">Examine at</label>
+                                   
+                                    <label for="nameInput" class="col-sm-2 col-form-label" style="color: black">Old degree</label>
+                                    
                                     <div class="col-sm-10">
-                                        <input class="form-control" id="examineAtinput" type="date" name="examine_at" value="<?= $grades->get('examine_at') ?>" required>
-                                    </div>  
+                                        <input class="form-control" id="nameInput" type="text" name="ss" value="<?=$grade->grade ?>" disabled="">
+                                    </div>
+                                    
+                                     <label for="nameInput" class="col-sm-2 col-form-label mt-2" style="color: black">Old Exame Date</label>
+                                    
+                                    <div class="col-sm-10 ">
+                                        <input class="form-control mt-2" id="nameInput" type="text" name="ss" value="<?=$grade->examine_date ?>" disabled="">
+                                    </div>
+                                   
+                                    
+                                    
+                                   <label for="nameInput" class="col-sm-2 col-form-label mt-5" style="color: black">New degree</label>
+
+                                    <div class="col-sm-10">
+                                        <input class="form-control mt-5"  id="nameInput" type="text" name="name" value="<?= $student->get('name') ?>" required>
+                                    </div>
+                                   
+                                   
+                                   
+                                   <label for="nameInput" class="col-sm-2 col-form-label mt-2" style="color: black">New Exame Date</label>
+
+                                    <div class="col-sm-10">
+                                        <input class="form-control mt-2"  id="nameInput" type="date" name="examine_date" value="<?= $student->get('examine_date') ?>" required>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <button class="button float-right" type="button" id="save">Save</button>
+                                    <button style="padding-left:50px ;padding-right: 50px" class="button float-right" type="submit" >Add </button>
                                 </div>
                             </div>
                         </div>
                     </form>
+                
+                    
+                
+                
                 </div>
             </div>
         </div>
     </body>
-    <?php include_once('./commons/tail.php') ?> 
-
-
-    <script type="text/javascript">
-        $('.alert').hide('fast');
-        $(document).ready(function () {
-            $('#degreeinput').change(function (event) {
-                var maxDegree = parseInt($('#maxGradeinput').val());
-                var Degree = parseInt($('#degreeinput').val());
-                if (Degree > maxDegree || Degree < 0) {
-                    $('.alert').show('slow');
-                } else {
-                    $('.alert').hide('slow');
-                }
-            });
-
-            $('#save').click(function (event) {
-                var maxDegree = parseInt($('#maxGradeinput').val());
-                var Degree = parseInt($('#degreeinput').val());
-                if (Degree <= maxDegree && Degree >= 0) {
-                    $('#form').submit();
-                }
-            });
-        });
-    </script>
+    <?php include_once('./common/tail.php') ?>
 </html>
