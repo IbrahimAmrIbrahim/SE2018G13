@@ -34,7 +34,7 @@ $user = new User($id); // get the user id
                             </div>
                         <?php } ?>
 
-                        <a href="#" class="float AddMaterial" url="./addCourseMaterial.php?id=<?= $id ?>&crs_id=<?= $crs_id ?>">
+                        <a href="#" class="float AddMaterial" url="./updateCourseMaterial.php?id=<?= $id ?>&crs_id=<?= $crs_id ?>">
                             <i class="fa fa-plus my-float"></i>
                         </a>
                     </div>

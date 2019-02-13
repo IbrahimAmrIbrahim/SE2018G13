@@ -76,6 +76,9 @@ class Courses extends Database {
         $materials = [];
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
             $coursMaterialInfo = [];
+            if (empty($row)) {
+                return;
+            }
             foreach ($row as $key => $value) {
                 $coursMaterialInfo[$key] = $value;
             }
@@ -96,6 +99,9 @@ class Courses extends Database {
         $statement->execute();
         $row = $statement->fetch(PDO::FETCH_ASSOC);
         $coursMaterialInfo = [];
+        if (empty($row)) {
+            return;
+        }
         foreach ($row as $key => $value) {
             $coursMaterialInfo[$key] = $value;
         }
