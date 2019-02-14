@@ -2,7 +2,7 @@
 
 ### Project Overview
 
-**LMS (learning management system)** is a software application for the administration, documentation, tracking, reporting and delivery of educational courses or training programs or learning and development programs. The learning management system concept emerged directly from e-Learning. The system offers sign up for students and teacher. LMS offer students track their grades, attendance, assignments, course materials and offer online delivery of their assignments and communication with their instructors. LMS also offers to instructors to introduce their material, assign students to their class, put tasks and assignments, update their attendance, grades and make analysis on it, take reports and feedback about their progress. 
+**LMS (learning management system)** is a software application for the administration, documentation, tracking, reporting and delivery of educational courses or training programs or learning and development programs. The learning management system concept emerged directly from e-Learning. The system offers sign up for students and teacher. LMS offer students track their grades, attendance, assignments and course materials. LMS also offers to instructors to introduce their material, assign students to their class, put tasks and assignments, update their attendance, grades and make analysis on it, take reports and feedback about their progress. 
 
 ### [Documentaions](https://github.com/IbrahimAmrIbrahim/SE2018G13/tree/master/Documentations) 
 
