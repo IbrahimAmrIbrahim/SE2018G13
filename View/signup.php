@@ -104,7 +104,7 @@
                                                 <select class="form-control" name="Profession">
                                                     <option value="School Student">School Student</option>
                                                     <option value="Collage Student">Collage Student</option>
-                                                    <option value="chool Teacher">School Teacher</option>
+                                                    <option value="School Teacher">School Teacher</option>
                                                     <option value="Teacher Assistant">Teacher Assistant</option>
                                                     <option value="Dr">Dr</option>
                                                     <option value="Professor">Professor</option>

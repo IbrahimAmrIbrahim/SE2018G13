@@ -36,6 +36,12 @@ class User extends Database {
         $statement->execute();
     }
 
+    public static function edituser($Full_Name, $Email, $Mobile_No, $Profession, $Department, $School_Collage, $Country, $id) {
+        $sql = "UPDATE `users` SET `Name`='$Full_Name',`email`='$Email',`mobile`='$Mobile_No',`profession`='$Profession',`department`='$Department',`school_collage`='$School_Collage',`country`='$Country' WHERE ID = $id;";
+        $statement = Database::$db->prepare($sql);
+        $statement->execute();
+    }
+
     public static function searchbyUserName($name) {
         $sql = "SELECT `User_ID` FROM `authentication` WHERE (User_Name = '$name');";
         $statement = Database::$db->prepare($sql);
@@ -85,4 +91,5 @@ class User extends Database {
         }
         return $students;
     }
+
 }
