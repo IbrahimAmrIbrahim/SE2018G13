@@ -9,7 +9,7 @@ include_once('../../Models/user.php');
 Database::DBConnect();
 $id = safeGet('id');
 $crs_id=safeGet('crs_id');
-$grade= new Studentxcourse($crs_id);
+$grade= new Studentxcourse($crs_id,$id);
 $user = new User($id);
 $course=new Courses($crs_id);
 ?>
