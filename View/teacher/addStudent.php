@@ -70,7 +70,7 @@ $user = new User($id_user);
     <script type="text/javascript">
         $(document).ready(function () {
             $('.AddStudent').click(function (event) {
-                window.location.href = "../../controllers/savestudent.php?id=" + $(this).attr('id') + "&crs_id=" + $(this).attr('crs_id') + "&name=" + $(this).attr('name');
+                window.location.href = "../../Controllers/savestudent.php?id=" + $(this).attr('id') + "&crs_id=" + $(this).attr('crs_id') + "&name=" + $(this).attr('name');
             });
         });
     </script>

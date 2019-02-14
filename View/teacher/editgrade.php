@@ -1,7 +1,7 @@
 <?php
 include_once('../../Controllers/common.php');
 include_once('../../Models/student.php');
-include_once('../../Models/Studentxcourse.php');
+include_once('../../Models/studentxcourse.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
 $crs_id = safeGet('crs_id');

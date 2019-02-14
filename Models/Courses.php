@@ -17,12 +17,9 @@ class Courses extends Database {
         }
     }
 
-//INSERT INTO courses (name,study_year,max_degree,description, type,teacher_id) VALUES ("phy",2,200,"phy for beginers",1,4);
-// type 0 = private
-// type 1 = public
     public static function add($name, $study_year, $max_degree, $description, $type, $teacher_id) {
-        $sql = "INSERT INTO courses (name,study_year,max_degree,description, type,teacher_id) VALUES (?,?,?,?,?,?);";
-        Database::$db->prepare($sql)->execute([$name, $study_year, $max_degree, $description, $type, $teacher_id]);
+        $sql = "INSERT INTO `courses` (`name`, `teacher_id`, `study_year`, `max_degree`, `type`, `description`) VALUES ('$name',$teacher_id,$study_year,$max_degree,$type,'$description');";
+        Database::$db->prepare($sql)->execute();
     }
 
     public function delete() {

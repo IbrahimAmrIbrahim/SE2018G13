@@ -42,7 +42,7 @@ $user = new User($user_id); // get the user id
 
                                     <div class="col-sm-10" style="margin-bottom: 10px"></div>
                                     <div class="col-sm-2" style="margin-bottom: 10px">
-                                        <button class="form-control" type='submit'> <?= ($materialid) ? 'Edit ' : 'Add ' ?></button>
+                                        <button class="form-control btn btn-outline-success" type='submit'> <?= ($materialid) ? 'Edit ' : 'Add ' ?></button>
                                     </div>
                                 </div>
                             </div>

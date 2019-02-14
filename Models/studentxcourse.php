@@ -115,7 +115,7 @@ class Studentxcourse extends Database {
         $sql = "INSERT INTO studentxcourse (crs_id, std_id) VALUES ($crs_id,$std_id);";
         Database::$db->prepare($sql)->execute();
         $sql = "INSERT INTO `attendance`(`crs_id`, `std_id`) VALUES ($crs_id,$std_id)";
-        Database::$db->prepare($sql3)->execute();
+        Database::$db->prepare($sql)->execute();
     }
 
 }

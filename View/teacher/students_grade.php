@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once('../../Controllers/common.php');
-include_once('../../Models/Studentxcourse.php');
+include_once('../../Models/studentxcourse.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();

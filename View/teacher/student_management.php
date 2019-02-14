@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include_once('../../Controllers/common.php');
-include_once('../../Models/Studentxcourse.php');
+include_once('../../Models/studentxcourse.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
@@ -63,7 +63,7 @@ $students = Studentxcourse::teacher_show_my_students($crs_id)
         // open edit grade page
         $(document).ready(function () {
             $('.add_student').click(function (event) {
-                window.location.href = "addStudent.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2');
+                window.location.href = "./addStudent.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2');
             });
         });
     </script>
