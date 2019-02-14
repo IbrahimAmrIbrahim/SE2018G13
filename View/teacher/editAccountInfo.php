@@ -19,12 +19,13 @@ $user = new User($id);
             <div class="container-fluid">
                 <div role="main" class="container">
                     <form action="../../Controllers/editAccountInfoController.php" method="post">
-                        <input type="hidden=" name="user_id" value="$id">
                         <div class="row">
                             <div class="col-md-3">
                                 <img src="../../Images/User.png" class="rounded-circle img-thumbnail" alt="User Img" width="250px" height="250px">
                             </div>
                             <div class="col-md-9">
+                                <input type="hidden" name="user_id" value="<?=$id?>">
+
                                 <div class="row">                        
                                     <div class="col-md-3" style="text-align: center;">Full Name</div>
                                     <div class="col-md-9"><input class="form-control" type ="text" name ="Full_Name" value="<?= $user->Name ?>" Required></div>
@@ -67,7 +68,7 @@ $user = new User($id);
 
                                 <div class="row" style="padding-top: 16px">
                                     <div class="col-md-9" ></div>
-                                    <div class="col-md-3"><button class="btn btn-success form-control" type="submit">Sign up</button></div>
+                                    <div class="col-md-3"><button class="btn btn-success form-control" type="submit">Update</button></div>
                                 </div>
                             </div>
                         </div>
