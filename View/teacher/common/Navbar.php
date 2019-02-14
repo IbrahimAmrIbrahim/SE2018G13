@@ -11,7 +11,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="./Courses.php?id=<?= $user->ID ?>"><i class="fas fa-book-open"></i>&nbsp; &nbsp; Courses</a>
                 <a class="dropdown-item" href="./students.php?id=<?= $user->ID ?>"><i class="fas fa-user-graduate"></i>&nbsp; &nbsp; Students</a>
-                <a class="dropdown-item" href="#"><i class="fas fa-cog"></i>&nbsp; &nbsp; Settings</a>
+                <a class="dropdown-item" href="./editAccountInfo.php?id=<?= $user->ID ?>"><i class="fas fa-cog"></i>&nbsp; &nbsp; Settings</a>
                 <a class="dropdown-item" href="../../index.php?id=<?= $user->ID ?>"><i class="fas fa-sign-out-alt"></i>&nbsp; &nbsp; Sign out</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="./about_us.php?id=<?= $user->ID ?>"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>

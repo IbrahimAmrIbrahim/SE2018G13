@@ -42,6 +42,7 @@ $user = new User($id); // get the user id
                             <div class="card" >
                                 <div class="card " id="<?= $id ?>" style=" background-color: rgba(06 ,44,51,0.85 );margin: 0;">
                                     <div class="card-body text-center">
+                                        <i class="fas fa-cog float-right edit_course" style="cursor: pointer;" id2=<?= $user->ID ?> id=<?= $course->id ?>></i>
                                         <h1><?= $course->name ?></h1>
                                         <p class="card-text"> course id : <?= $course->id ?> </p>
                                         <p class="card-text">course study year : <?= $course->study_year ?> </p>
@@ -51,9 +52,6 @@ $user = new User($id); // get the user id
                                         <p><?= $course->description ?> </p>
 
                                         <button class="show_details" id2=<?= $user->ID ?> id=<?= $course->id ?>  > Show Details </button>
-                                        <a href="./editcourse.php?id=<?= $id ?>" class="editfloat">
-                                            <i class="fa fa-plus"></i>
-                                        </a>
                                     </div>
                                 </div> 
                             </div>
@@ -74,6 +72,10 @@ $user = new User($id); // get the user id
 
         $('.show_details').click(function (event) {
             window.location.href = "students.php?id=" + $(this).attr('id2') + "&&crs_id=" + $(this).attr('id');
+        });
+
+        $('.edit_course').click(function (event) {
+            window.location.href = "./editcourse.php?id=" + $(this).attr('id2') + "&&crs_id=" + $(this).attr('id');
         });
 
         $('.delete_course').click(function () {
