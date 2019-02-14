@@ -17,5 +17,5 @@ $new->examine_date = $new_date;
 
 $new->save();
 
-header("Location: ../view/teacher/students_grade.php?id=$id_user&crs_id=$crs_id");
+header("Location: ../View/teacher/students_grade.php?id=$id_user&crs_id=$crs_id");
 ?>

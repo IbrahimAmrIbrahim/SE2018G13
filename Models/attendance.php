@@ -27,6 +27,17 @@ class Attendance extends Database {
         }
         return $attendences;
     }
+    
+        public static function all_student($std_id , $crs_id) {
+        $sql = "SELECT `id` FROM `attendance` WHERE std_id = $std_id and crs_id = $crs_id;";
+        $statement = Database::$db->prepare($sql);
+        $statement->execute();
+        $attendences = [];
+        while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
+            $attendences[] = new Attendance($row['id']);
+        }
+        return $attendences;
+    }
 
     public static function save($id,$week1,$week2,$week3,$week4,$week5,$week6,$week7,$week8,$week9,$week10,$week11,$week12) {
         $sql = "UPDATE `attendance` SET `Week1`=$week1,`Week2`=$week2,`Week3`=$week3,`Week4`=$week4,`Week5`=$week5,`Week6`=$week6,`Week7`=$week7,`Week8`=$week8,`Week9`=$week9,`Week10`=$week10,`Week11`=$week11,`Week12`=$week12 WHERE id = $id;";

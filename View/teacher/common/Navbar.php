@@ -4,7 +4,7 @@
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow">
 
-            <button class="btn Navbtn dropdown-toggle" id="userDropdown"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../Images/User.png" class="rounded-circle" alt="User Img" width="30px" height="30px">&nbsp; &nbsp; <?= $user->profession ?>  <?= $user->Name ?></button>
+            <button class="btn Navbtn dropdown-toggle" id="userDropdown"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../Images/User.png" class="rounded-circle" alt="User Img" width="30px" height="30px">&nbsp; &nbsp; <?= $user->Name ?></button>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="./home.php?id=<?= $user->ID ?>"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>
@@ -25,7 +25,7 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand" style="color: white;">
-                <?= $user->profession ?>  <?= $user->Name ?>
+                <?= $user->Name ?>
             </li>
             <li>
                 <a href="./home.php?id=<?= $user->ID ?>"><i class="fas fa-home"></i>&nbsp; &nbsp; Home</a>

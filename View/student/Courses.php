@@ -1,13 +1,11 @@
 <?php
 include_once('../../Controllers/common.php');
-include_once('../../Models/Courses.php');
-include_once('../../Models/grade.php');
 include_once('../../Models/studentxcourse.php');
+include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
 $id = safeGet('id');
-$my_courses= Studentxcourse::std_show_my_courses($id);
-
+$my_courses = Studentxcourse::std_show_my_courses($id);
 $user = new User($id); // get the user id 
 ?>
 
@@ -22,12 +20,13 @@ $user = new User($id); // get the user id
             <div class="container-fluid">
                 <div role="main" class="container">
 
+                    <a href="./addcourse.php?id=<?= $id ?>" class="float">
+                        <i class="fa fa-plus my-float"></i>
+                    </a>
+
                     <div class="card-deck table">
                         <?php
-                        //$grades = Grade::std_all(7, NULL, NULL);
-                        $gradenum = 0;
                         foreach ($my_courses as $course) {
-                           // $gradenum = $gradenum + 1;
                             $valid = $course->type;
                             if ($valid == 1) {
                                 $valid = "public";
@@ -67,48 +66,8 @@ $user = new User($id); // get the user id
 
 
         $('.show_details').click(function (event) {
-            window.location.href = "students.php?id=" + $(this).attr('id2') + "&&crs_id=" + $(this).attr('id');
+            window.location.href = "courseDashboard.php?id=" + $(this).attr('id2') + "&&crs_id=" + $(this).attr('id');
         });
-
-        $('.delete_course').click(function () {
-            var anchor = $(this);
-            var crsID = anchor.attr('id');
-            $.ajax({
-                url: './controllers/deletecourses.php',
-                type: 'GET',
-                dataType: 'json',
-                data: {id: crsID},
-            })
-                    .done(function (response) {
-                        if (response.status == 1) {
-                            anchor.closest('tr').fadeOut('slow', function () {
-                                $(this).remove();
-                            });
-                            $("#grade" + crsID).fadeOut('slow');
-                        }
-                    })
-                    .fail(function () {
-                        alert("Connection error.");
-                    })
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     });
 

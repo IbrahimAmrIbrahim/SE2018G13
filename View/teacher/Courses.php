@@ -20,7 +20,7 @@ $user = new User($id); // get the user id
             <div class="container-fluid">
                 <div role="main" class="container">
 
-                    <a href="./editcourse.php?id=<?= $id ?>" class="float">
+                    <a href="./addcourse.php?id=<?= $id ?>" class="float">
                         <i class="fa fa-plus my-float"></i>
                     </a>
 
