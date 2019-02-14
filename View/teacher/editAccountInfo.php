@@ -80,14 +80,5 @@ $user = new User($id);
         </div>
 
         <?php include_once('./common/tail.php') ?> 
-
-        <script>
-
-            $("#menu-toggle").click(function (e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-        </script>
-
     </body>
 </html>

@@ -15,8 +15,9 @@
                         <div class="col-md-6">
                             <div class="card-box">
                                 <div class="card-title">
-                                    <h2>phone number: +20 xxxxxxxxxxx <br>
-                                        location: egypt/xxxxx/xxxx</h2>
+                                    <h2>To Contact us for support , question and feedback please send us email on:   </h2>
+                                    <p style="text-align: center;">ibrahem.amr.eid@gmail.com <br>
+                                        dreadknight29@gmail.com</p>
                                 </div>
                             </div>
                         </div>

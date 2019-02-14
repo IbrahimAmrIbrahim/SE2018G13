@@ -17,5 +17,5 @@ for ($i; $i < $NumOfCheck; $i = $i + 1) {
         Grade::add($checkdata, $id);
     }
 }
-header('Location: ../view/student/students.php');
+header('Location: ../View/student/students.php');
 ?>

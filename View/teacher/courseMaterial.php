@@ -1,10 +1,9 @@
 <?php
 include_once('../../Controllers/common.php');
 include_once('../../Models/Courses.php');
-include_once('../../Models/Studentxcourse.php');
-
 include_once('../../Models/user.php');
 Database::DBConnect();
+
 $id = safeGet('id');
 $crs_id = safeGet('crs_id');
 $user = new User($id); // get the user id 

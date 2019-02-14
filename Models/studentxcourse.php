@@ -4,7 +4,7 @@ include_once('database.php');
 
 class Studentxcourse extends Database {
 
-    function __construct($id,$id2) {
+    function __construct($id, $id2) {
         $sql = "SELECT * FROM studentxcourse WHERE studentxcourse.crs_id = $id and studentxcourse.std_id=$id2 ";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
@@ -26,7 +26,6 @@ class Studentxcourse extends Database {
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
         if (!empty($data)) {
-
             return;
         }
         // check proffsion
@@ -47,6 +46,8 @@ class Studentxcourse extends Database {
         //  SELECT * FROM studentxcourse WHERE crs_id =$crs_id  AND std_id=$std_id
         $sql3 = "INSERT INTO studentxcourse (crs_id, std_id, grade ,examine_date) VALUES (?,?,?,?);";
         Database::$db->prepare($sql3)->execute([$crs_id, $std_id, $grade, $examine_date]);
+        $sql3 = "INSERT INTO `attendance`(`crs_id`, `std_id`) VALUES ($crs_id,$std_id)";
+        Database::$db->prepare($sql3)->execute();
     }
 
     public function delete() {

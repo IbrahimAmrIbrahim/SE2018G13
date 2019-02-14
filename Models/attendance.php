@@ -4,8 +4,8 @@ include_once('database.php');
 
 class Attendance extends Database {
 
-    function __construct($id,$id2) {
-        $sql = "SELECT * FROM attendance WHERE attendance.crs_id = $id and attendance.std_id=$id2 ";
+    function __construct($id) {
+        $sql = "SELECT attendance.*,users.Name as student_name, (attendance.Week1+attendance.Week2+attendance.Week3+attendance.Week4+attendance.Week5+attendance.Week6+attendance.Week7+attendance.Week8+attendance.Week9+attendance.Week10+attendance.Week11+attendance.Week12) as attendance_point FROM attendance join users on users.ID = attendance.std_id WHERE attendance.id = $id";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
@@ -17,48 +17,22 @@ class Attendance extends Database {
         }
     }
 
-    //INSERT INTO courses (name,study_year,max_degree,description, type,teacher_id) VALUES ("phy",2,200,"phy for beginers",1,4);
-    // ty[e 0 = private
-    public static function add($crs_id, $std_id, $points) {
-        
-       
-        $sql3 = "INSERT INTO attendance (crs_id, std_id, points ) VALUES (?,?,?);";
-        Database::$db->prepare($sql3)->execute([$crs_id, $std_id, $points ]);
-    }
-
-    public function delete() {
-        $sql = "DELETE FROM attendance WHERE id = $this->id;";
-        Database::$db->query($sql);
-    }
-
-    public static function all($id) {
-        $sql = "SELECT studentxcourse.*,users.Name FROM studentxcourse join users ON studentxcourse.std_id= users.ID WHERE studentxcourse.crs_id = $id";
+    public static function all_course($id) {
+        $sql = "SELECT `id` FROM `attendance` WHERE crs_id = $id;";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
-        $grades = [];
+        $attendences = [];
         while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-            $grade = [];
-            foreach ($row as $key => $value) {
-                $grade[$key] = $value;
-            }
-            $grades[] = $grade;
+            $attendences[] = new Attendance($row['id']);
         }
-        return $grades;
+        return $attendences;
     }
 
-    public function save() {
-        $sql = "UPDATE attendance SET crs_id=?, points = ?,std_id=? WHERE id = ?;";
-        Database::$db->prepare($sql)->execute([$this->crs_id, $this->points, $this->std_id, $this->id]);
+    public static function save($id,$week1,$week2,$week3,$week4,$week5,$week6,$week7,$week8,$week9,$week10,$week11,$week12) {
+        $sql = "UPDATE `attendance` SET `Week1`=$week1,`Week2`=$week2,`Week3`=$week3,`Week4`=$week4,`Week5`=$week5,`Week6`=$week6,`Week7`=$week7,`Week8`=$week8,`Week9`=$week9,`Week10`=$week10,`Week11`=$week11,`Week12`=$week12 WHERE id = $id;";
+        $statement = Database::$db->prepare($sql);
+        $statement->execute();
     }
-
-    // function return courses for the student
-    
-
-    //==============show teacher students==============//
-  
-
-    //get specific degree
-    
 
 }
 
