@@ -4,8 +4,8 @@ include_once('database.php');
 
 class Studentxcourse extends Database {
 
-    function __construct($id) {
-        $sql = "SELECT studentxcourse.*,users.Name FROM studentxcourse join users ON studentxcourse.std_id= users.ID WHERE studentxcourse.crs_id = $id";
+    function __construct($id,$id2) {
+        $sql = "SELECT * FROM studentxcourse WHERE studentxcourse.crs_id = $id and studentxcourse.std_id=$id2 ";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
@@ -71,7 +71,7 @@ class Studentxcourse extends Database {
 
     public function save() {
         $sql = "UPDATE studentxcourse SET crs_id=?,examine_date=?, grade = ?,std_id=? WHERE id = ?;";
-        Database::$db->prepare($sql)->execute([$this->crs_id, $this->emaxine_date, $this->grade, $this->std_id, $this->id]);
+        Database::$db->prepare($sql)->execute([$this->crs_id, $this->examine_date, $this->grade, $this->std_id, $this->id]);
     }
 
     // function return courses for the student
