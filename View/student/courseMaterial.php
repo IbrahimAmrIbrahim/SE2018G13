@@ -1,0 +1,64 @@
+<?php
+include_once('../../Controllers/common.php');
+include_once('../../Models/Courses.php');
+include_once('../../Models/Studentxcourse.php');
+
+include_once('../../Models/user.php');
+Database::DBConnect();
+$id = safeGet('id');
+$crs_id = safeGet('crs_id');
+$user = new User($id); // get the user id 
+?>
+
+<!DOCTYPE html>
+<html lang= "en">
+    <?php include_once './common/head.php'; ?>  
+    <body>
+        <?php
+        include_once './common/Navbar.php';
+        ?>   
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div role="main" class="container">
+
+                    <div class="card" style="background-color: transparent;border: 0px;">
+                        <?php
+                        $courseMaterials = Courses::courseMaterial($crs_id);
+                        foreach ($courseMaterials as $courseMaterial) {
+                            ?>
+                            <div class="card-body materialCard">
+                                <p class="card-text"><?= $courseMaterial['material_label'] ?></p>
+                                <a href="#" class="btn btn-success Material" url="<?= $courseMaterial['material_url'] ?>">Open</a>
+                                
+                            </div>
+                        <?php } ?>
+
+                        <a href="#" class="float AddMaterial" url="./updateCourseMaterial.php?id=<?= $id ?>&crs_id=<?= $crs_id ?>">
+                            <i class="fa fa-plus my-float"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body> 
+<?php include_once './common/tail.php'; ?> 
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+
+        $('.Material').click(function (event) {
+            var win = window.open($(this).attr('url'), '_blank');
+            win.focus();
+        });
+
+      
+
+    
+    });
+
+</script>   
+</html>

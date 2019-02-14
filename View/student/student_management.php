@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <?php
-include_once('../../Models/studentxcourse.php');
 include_once('../../Controllers/common.php');
 include_once('../../Models/student.php');
-include_once('../../Models/grade.php');
+include_once('../../Models/Studentxcourse.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
 $id = safeGet('id');
 $crs_id=safeGet('crs_id');
-$grade= new Studentxcourse($crs_id,$id);
 $user = new User($id);
 $course=new Courses($crs_id);
+$students = Studentxcourse::teacher_show_my_students($crs_id)
 ?>
 
 
@@ -25,44 +24,38 @@ $course=new Courses($crs_id);
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div role="main" class="container">
+                    <h1 class="mt-5  "><?= $course->name ?></h1>
                     
-                    <h1 class="mt-5" style=" color: blue  "><?= $course->name ?></h1>
-                  
-                    <div class="card-text mb-3" > <?= $course->description?></div>
-                       
-                  
                     <div>
                         
-                        
-                        <div class="card-deck table">
-  <div class="card student_grade" id="<?=$id?>" id2="<?=$crs_id?>" style=" background-color: rgba(06 ,44,51,0.85 ) ">
-    <div class="card-body text-center">
-        <h3>course degree </h3>
-        <p class="card-text"> MAX = <?= $course->max_degree?> </p>
-            <p class="card-text">MINE = <?= $grade->grade ?>   </p>
-    </div>
-  </div>
-   <div class="card student_managment" id="<?=$id?>" id2="<?=$crs_id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
-    <div class="card-body text-center">
-        <h3>Student Enrolled</h3>
-      <p class="card-text">you can see students from here </p>
-    </div>
-  </div>
+                        <table class="table">
+                                            <thead>
+                                                <tr id="GardeTable_th">
+                                                    <th scope="col">Student ID  </th>
+                                                               
+                                                    <th scope="col">Student Name  </th>
+                                                    <th scope="col">
+                                                </tr>
+                                            </thead>
+                                            
+                                                    <tbody>
+                          <?php
+                        //$grades = Grade::std_all(7, NULL, NULL);
+                        $gradenum = 0;
+                        foreach ($students as $student) {
                             
-   <div class="card course_material" id="<?=$id?>" id2="<?=$crs_id?>"  style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
-    <div class="card-body text-center">
-          <h3>Course Material</h3>
-      <p class="card-text">click to open the materials file</p>
-    </div>
-  </div>
-<div class="card student_grade" id="<?=$id?>" id2="<?=$crs_id?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
-    <div class="card-body text-center">
-          <h3>attendance</h3>
-      <p class="card-text">show your attendance  </p>
-      
-    </div>
-  </div> 
-</div>
+                         ?>
+
+                           <tr id="GardeTable_tr">
+                                        <td class="<?= $student->id ?>gradeCrsID<?= $gradenum ?>"><?= $student->ID ?></td>
+                                        <td class="<?= $student->id ?>gradeCrsName<?= $gradenum ?>"><?= $student->Name ?></td>
+                                        <td></td>
+                                
+                           <?php } ?>
+                                                            </tbody>
+                        </table>
+                        
+                 
                     </div>
                     
                 </div>
@@ -76,22 +69,13 @@ $course=new Courses($crs_id);
     <script type="text/javascript">
                 // open edit grade page
         $(document).ready(function () {
-         
-
-         
-
-                // material page
-            $('.course_material').click(function (event) {
-                 window.location.href = "courseMaterial.php?id=" +$(this).attr('id')+"&&crs_id="+ $(this).attr('id2');
+            $('.add_student').click( function (event) {
+                window.location.href = "editstudent.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
             });
-                // student enroll
-            $('.student_managment').click(function (event) {
-                  window.location.href = "student_management.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
-            });
+
             
-              $('.student_attendance').click(function (event) {
-               window.location.href = "students_attendance.php?id=" +$(this).attr('id') +"&&crs_id="+ $(this).attr('id2');
-            });
+            
+             
 
           
             });
@@ -127,4 +111,4 @@ $course=new Courses($crs_id);
                     })
         }
     </script>
-</html> 
+</html>
