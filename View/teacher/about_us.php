@@ -1,6 +1,17 @@
+<?php
+include_once('../../Controllers/common.php');
+include_once('../../Models/user.php');
+
+Database::DBConnect();
+$id = safeGet('id');
+$user = new User($id); // get the user id 
+?>  
+
 <!DOCTYPE html>
 <html lang= "en">
-    <?php include_once './common/head.php'; ?>  
+    <?php
+    include_once './common/head.php';
+    ?>  
 
     <body>
         <?php

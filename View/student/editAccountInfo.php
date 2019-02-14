@@ -42,10 +42,8 @@ $user = new User($id);
                                     <div class="col-md-9">
                                         <div class="form-group">
                                             <select class="form-control" name="Profession">
-                                                <option value="School Teacher" <?= ($user->profession == "School Teacher" ) ? "Selected" : "" ?>>School Teacher</option>
-                                                <option value="Teacher Assistant" <?= ($user->profession == "Teacher Assistant" ) ? "Selected" : "" ?>>Teacher Assistant</option>
-                                                <option value="Dr" <?= ($user->profession == "Dr" ) ? "Selected" : "" ?>>Dr</option>
-                                                <option value="Professor" <?= ($user->profession == "Professor" ) ? "Selected" : "" ?>>Professor</option>
+                                                <option value="School Student" <?= ($user->profession == "School Student" ) ? "Selected" : "" ?>>School Student</option>
+                                                <option value="Collage Student" <?= ($user->profession == "Collage Student" ) ? "Selected" : "" ?>>Collage Student</option>
                                             </select>
                                         </div>
                                     </div>

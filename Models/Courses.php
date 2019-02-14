@@ -10,7 +10,7 @@ class Courses extends Database {
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
         if (empty($data)) {
-            return;
+            return $this->{'id'} = 0;
         }
         foreach ($data as $key => $value) {
             $this->{$key} = $value;

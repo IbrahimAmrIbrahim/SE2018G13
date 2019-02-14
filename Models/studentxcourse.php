@@ -4,13 +4,13 @@ include_once('database.php');
 
 class Studentxcourse extends Database {
 
-    function __construct($id,$id2) {
-        $sql = "SELECT * FROM studentxcourse WHERE studentxcourse.crs_id = $id and studentxcourse.std_id=$id2 ";
+    function __construct($crs_id, $std_id) {
+        $sql = "SELECT * FROM studentxcourse WHERE studentxcourse.crs_id = $crs_id and studentxcourse.std_id=$std_id ";
         $statement = Database::$db->prepare($sql);
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
         if (empty($data)) {
-            return;
+            return $this->{'id'} = 0;
         }
         foreach ($data as $key => $value) {
             $this->{$key} = $value;
@@ -26,7 +26,6 @@ class Studentxcourse extends Database {
         $statement->execute();
         $data = $statement->fetch(PDO::FETCH_ASSOC);
         if (!empty($data)) {
-
             return;
         }
         // check proffsion
@@ -47,6 +46,8 @@ class Studentxcourse extends Database {
         //  SELECT * FROM studentxcourse WHERE crs_id =$crs_id  AND std_id=$std_id
         $sql3 = "INSERT INTO studentxcourse (crs_id, std_id, grade ,examine_date) VALUES (?,?,?,?);";
         Database::$db->prepare($sql3)->execute([$crs_id, $std_id, $grade, $examine_date]);
+        $sql3 = "INSERT INTO `attendance`(`crs_id`, `std_id`) VALUES ($crs_id,$std_id)";
+        Database::$db->prepare($sql3)->execute();
     }
 
     public function delete() {
@@ -108,6 +109,13 @@ class Studentxcourse extends Database {
             $courses[] = new Courses($row['id']);
         }
         return $courses;
+    }
+
+    public static function addCoursetoStudent($std_id, $crs_id) {
+        $sql = "INSERT INTO studentxcourse (crs_id, std_id) VALUES ($crs_id,$std_id);";
+        Database::$db->prepare($sql)->execute();
+        $sql = "INSERT INTO `attendance`(`crs_id`, `std_id`) VALUES ($crs_id,$std_id)";
+        Database::$db->prepare($sql3)->execute();
     }
 
 }

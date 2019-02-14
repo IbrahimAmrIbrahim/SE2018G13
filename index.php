@@ -30,7 +30,7 @@
 
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" data-toggle="modal" data-target="#loginModal" href="#"><i class="fas fa-sign-in-alt"></i>&nbsp; &nbsp; Sign in</a>
-                        <a class="dropdown-item"  href="./View/signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
+                        <a class="dropdown-item" href="./View/signup.php"><i class="fas fa-user-plus"></i>&nbsp; &nbsp; Sign up</a>
                         <a class="dropdown-item" href="./View/about_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; About us</a>
                         <a class="dropdown-item" href="./View/contact_us.php"><i class="fas fa-info"></i>&nbsp; &nbsp; Contact us</a>
                     </div>
