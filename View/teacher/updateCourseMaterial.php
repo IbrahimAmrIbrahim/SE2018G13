@@ -22,7 +22,7 @@ $user = new User($user_id); // get the user id
     <?php include_once './common/head.php'; ?>  
     <body>
         <?php
-        include_once './common/Navbar.php';
+        include_once './common/CourseNavbar.php';
         $courseMaterials = Courses::showCourseMaterial($materialid);
         ?>   
         <div id="page-content-wrapper">

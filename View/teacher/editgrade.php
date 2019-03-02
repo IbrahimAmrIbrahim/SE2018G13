@@ -23,7 +23,7 @@ $grade = new Studentxcourse($crs_id, $std_id);
     <?php include_once './common/head.php'; ?>  
     <body>
         <?php
-        include_once './common/Navbar.php';
+        include_once './common/CourseNavbar.php';
         ?>   
         <div id="page-content-wrapper">
             <div class="container-fluid">
