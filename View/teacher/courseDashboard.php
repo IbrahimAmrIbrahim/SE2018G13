@@ -24,11 +24,15 @@ $course = new Courses($crs_id);
         <?php
         include_once './common/Navbar.php';
         ?>   
+       
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div role="main" class="container">
+                    
+                        <h1 style="color: #062c33;"> 
+                        teacher name : <?= User::user($course->teacher_id)->Name ?></h1>
                     <h1 class="mt-5  "><?= $course->name ?></h1>
-
+                
                     <div>
                         <div class="card-deck table">
                             <div class="card course_material" id="<?= $id ?>" id2="<?= $crs_id ?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
@@ -49,6 +53,7 @@ $course = new Courses($crs_id);
                                     <p class="card-text">you can edit Students grade for this course</p>
                                 </div>
                             </div>
+                            
                             <div class="card student_attendance" id="<?= $id ?>" id2="<?= $crs_id ?>" style=" background-color: rgba(06 ,44,51,0.85 );cursor: pointer ">
                                 <div class="card-body text-center">
                                     <h3>Student attendance</h3>
@@ -61,6 +66,7 @@ $course = new Courses($crs_id);
                 </div>
             </div>
         </div>
+         
     </body> 
     <?php include_once './common/tail.php'; ?>
 

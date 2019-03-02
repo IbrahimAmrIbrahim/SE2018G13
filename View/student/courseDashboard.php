@@ -29,8 +29,9 @@ $course = new Courses($crs_id);
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div role="main" class="container">
-                    <h1 class="mt-5" style=" color: blue  "><?= $course->name ?></h1>
-                    <div class="card-text mb-3" style="word-break: normal"> <?= $course->description ?></div>
+                        <h1 style="color: #062c33;">   teacher name : <?= User::user($course->teacher_id)->Name ?></h1>
+                    <h1 class="mt-5" style="  "><?= $course->name ?></h1>
+                    <div class="card-text mb-3" style="word-break: normal" > <?= $course->description ?></div>
                     <div>
 
                         <div class="card-deck table">
