@@ -1,10 +1,17 @@
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 
 Database::DBConnect();
-$id = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id = $_SESSION['id'];
+}
 $course_id = Courses::show_my_courses($id);
 $user = new User($id); // get the user id 
 ?>
@@ -66,11 +73,11 @@ $user = new User($id); // get the user id
     $(document).ready(function () {
 
         $('.show_details').click(function (event) {
-            window.location.href = "./courseDashboard.php?id=" + $(this).attr('id2') + "&&crs_id=" + $(this).attr('id');
+            window.location.href = "./courseDashboard.php?crs_id=" + $(this).attr('id');
         });
 
         $('.edit_course').click(function (event) {
-            window.location.href = "./editcourse.php?id=" + $(this).attr('id2') + "&&crs_id=" + $(this).attr('id');
+            window.location.href = "./editcourse.php?crs_id=" + $(this).attr('id');
         });
 
     });

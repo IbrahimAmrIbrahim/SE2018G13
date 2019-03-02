@@ -1,9 +1,16 @@
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/user.php');
 
 Database::DBConnect();
-$id = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id = $_SESSION['id'];
+}
 $user = new User($id); // get the user id 
 ?>  
 

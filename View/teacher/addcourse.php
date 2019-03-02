@@ -1,8 +1,15 @@
 <?php
+// Start the session
+session_start();
+
 include_once("../../Controllers/common.php");
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
-$user_id = safeGet('id', 0);
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $user_id = $_SESSION['id'];
+}
 $course_id = safeGet('crs_id', 0);
 Database::DBConnect();
 $courses = new Courses($course_id);
@@ -23,7 +30,6 @@ $user = new User($user_id); // get the user id
                     <h2 class="mt-5">Add Course</h2>
 
                     <form action="../../Controllers/savecourse.php" method="post">
-                        <input type="hidden" name="user_id" value="<?= $user_id ?>">
                         <input type="hidden" name="course_id" value="<?= $course_id ?>">
                         <div class="card"  style='background: #002752'>
                             <div class="card-body">

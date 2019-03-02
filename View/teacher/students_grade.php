@@ -1,11 +1,17 @@
-<!DOCTYPE html>
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/studentxcourse.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
-$id = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id = $_SESSION['id'];
+}
 $crs_id = safeGet('crs_id');
 $user = new User($id);
 $course = new Courses($crs_id);
@@ -70,7 +76,7 @@ $grades = Studentxcourse::all($crs_id);
         // open edit grade page
         $(document).ready(function () {
             $('.edit_grade').click(function (event) {
-                window.location.href = "./editgrade.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2') + "&&std_id=" + $(this).attr('id4');
+                window.location.href = "./editgrade.php?crs_id=" + $(this).attr('id2') + "&&std_id=" + $(this).attr('id4');
             });
        });
 

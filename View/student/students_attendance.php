@@ -1,12 +1,18 @@
-<!DOCTYPE html>
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/attendance.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 
 Database::DBConnect();
-$id = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id = $_SESSION['id'];
+}
 $crs_id = safeGet('crs_id');
 $course = new Courses($crs_id);
 $user = new User($id);

@@ -1,9 +1,16 @@
 <?php
+// Start the session
+session_start();
+
 include_once("../../Controllers/common.php");
 include_once('../../Models/user.php');
 Database::DBConnect();
 $crs_id = safeGet('crs_id');
-$id_user = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id_user = $_SESSION['id'];
+}
 $user = new User($id_user);
 ?>
 
@@ -21,7 +28,6 @@ $user = new User($id_user);
                     <h2 class="mt-5">Add Student</h2>
                     <form action="./addStudent.php" class="form-inline" method="get">
                         <div class="input-group" style="width: 100%">
-                            <input type="hidden" name="id" value="<?= $id_user ?>">
                             <input type="hidden" name="crs_id" value="<?= $crs_id ?>">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-search"></i></span>
@@ -70,7 +76,7 @@ $user = new User($id_user);
     <script type="text/javascript">
         $(document).ready(function () {
             $('.AddStudent').click(function (event) {
-                window.location.href = "../../Controllers/savestudent.php?id=" + $(this).attr('id') + "&crs_id=" + $(this).attr('crs_id') + "&name=" + $(this).attr('name');
+                window.location.href = "../../Controllers/savestudent.php?crs_id=" + $(this).attr('crs_id') + "&name=" + $(this).attr('name');
             });
         });
     </script>

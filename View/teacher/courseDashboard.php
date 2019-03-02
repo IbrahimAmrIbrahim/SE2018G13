@@ -1,10 +1,16 @@
-<!DOCTYPE html>
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
-$id = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id = $_SESSION['id'];
+}
 $crs_id = safeGet('crs_id');
 $user = new User($id);
 $course = new Courses($crs_id);
@@ -64,20 +70,20 @@ $course = new Courses($crs_id);
         // open edit grade page
         $(document).ready(function () {
             $('.student_grade').click(function (event) {
-                window.location.href = "./students_grade.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2');
+                window.location.href = "./students_grade.php?crs_id=" + $(this).attr('id2');
             });
 
             // material page
             $('.course_material').click(function (event) {
-                window.location.href = "./courseMaterial.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2');
+                window.location.href = "./courseMaterial.php?crs_id=" + $(this).attr('id2');
             });
             // student enroll
             $('.student_managment').click(function (event) {
-                window.location.href = "./student_management.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2');
+                window.location.href = "./student_management.php?crs_id=" + $(this).attr('id2');
             });
 
             $('.student_attendance').click(function (event) {
-                window.location.href = "./students_attendance.php?id=" + $(this).attr('id') + "&&crs_id=" + $(this).attr('id2');
+                window.location.href = "./students_attendance.php?crs_id=" + $(this).attr('id2');
             });
         });
 

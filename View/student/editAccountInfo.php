@@ -1,9 +1,15 @@
-<!DOCTYPE html>
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/user.php');
 Database::DBConnect();
-$id = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id = $_SESSION['id'];
+}
 $user = new User($id);
 ?>
 
@@ -23,7 +29,6 @@ $user = new User($id);
                                 <img src="../../Images/User.png" class="rounded-circle img-thumbnail" alt="User Img" width="250px" height="250px">
                             </div>
                             <div class="col-md-9">
-                                <input type="hidden" name="user_id" value="<?=$id?>">
 
                                 <div class="row">                        
                                     <div class="col-md-3" style="text-align: center;">Full Name</div>

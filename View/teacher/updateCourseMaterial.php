@@ -1,10 +1,17 @@
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 
 Database::DBConnect();
-$user_id = safeGet('id', 0);
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $user_id = $_SESSION['id'];
+}
 $crs_id = safeGet('crs_id', 0);
 $materialid = safeGet('materialid', 0);
 $user = new User($user_id); // get the user id 
@@ -27,7 +34,6 @@ $user = new User($user_id); // get the user id
                         <div class="card" style="background: rgba(06 ,44,51,0.85 );">
                             <div class="card-body">
                                 <div class="form-group row gutters">
-                                    <input type="hidden" name="user_id" value="<?= $user_id ?>">
                                     <input type="hidden" name="crs_id" value="<?= $crs_id ?>">
                                     <input type="hidden" name="materialid" value="<?= $materialid ?>">
 
