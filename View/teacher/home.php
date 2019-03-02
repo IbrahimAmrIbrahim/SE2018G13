@@ -25,6 +25,7 @@ $user = new User($id);
             <div class="container-fluid">
                 <div class="container">
                     <h1 class="mt-5">Welcome <?= $user->profession?> : <?= $user->Name ?></h1>
+                    <h2 class="mt-5">ID : <?= $id ?></h2>
                 </div>
             </div>
         </div>
