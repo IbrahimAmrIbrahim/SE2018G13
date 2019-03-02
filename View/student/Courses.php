@@ -47,6 +47,7 @@ $user = new User($id); // get the user id
                                     <div class="card-body text-center">
                                         <h1><?= $course->name ?></h1>
                                         <p class="card-text"> course id : <?= $course->id ?> </p>
+                                        <p class="card-text"> teacher name : <?= User::user($course->teacher_id)->Name ?></p>
                                         <p class="card-text">course study year : <?= $course->study_year ?> </p>
                                         <p class="card-text">course max degree : <?= $course->max_degree ?> </p>
                                         <p class="card-text">course type : <?= $valid ?> </p>
