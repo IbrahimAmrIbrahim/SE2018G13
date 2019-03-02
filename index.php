@@ -76,7 +76,7 @@
                         ?>
 
                         <h1 class="mt-5"> Welcome everyone to our site </h1>
-                        <p>it's for study and mange your time </p>
+                        <p style="text-align: justify;">it's for study and mange your time </p>
                         <p>We hope you find it helpful</p>
 
                         <!-- The Modal -->
