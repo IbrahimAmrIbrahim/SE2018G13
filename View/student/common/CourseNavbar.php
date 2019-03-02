@@ -34,7 +34,7 @@
                 <a href="./Courses.php"><i class="fas fa-book-open"></i>&nbsp; &nbsp; My Courses</a>
             </li>
             <li>
-                <a href="./courseDashboard.php?crs_id=<?= $crs_id ?>"><i class="fas fa-book-open"></i>&nbsp; &nbsp; Course Dashboard</a>
+                <a href="./courseDashboard.php?crs_id=<?= $crs_id ?>"><i class="fas fa-book-reader"></i>&nbsp; &nbsp; Course Dashboard</a>
             </li>
             <div class="dropdown-divider"></div>
             <li>
