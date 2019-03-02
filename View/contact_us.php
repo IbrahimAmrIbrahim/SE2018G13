@@ -66,8 +66,10 @@
                                 <div class="card-box">
                                     <div class="card-title">
                                         <h2>To Contact us for support , question and feedback please send us email on:   </h2>
-                                        <p style="text-align: center;">ibrahem.amr.eid@gmail.com <br>
-                                            dreadknight29@gmail.com</p>
+                                        <p style="text-align: center;">
+                                            <a href="https://ibrahimamribrahim.sarahah.com/" target="_blank">Ibrahim Amr</a><br>
+                                            <a href="https://ahmedhessuinahmed.sarahah.com/" target="_blank">Ahmed Hessuin</a>
+                                        </p>
 
                                     </div>
                                 </div>
