@@ -1,12 +1,18 @@
-<!DOCTYPE html>
 <?php
+// Start the session
+session_start();
+
 include_once('../../Controllers/common.php');
 include_once('../../Models/attendance.php');
 include_once('../../Models/Courses.php');
 include_once('../../Models/user.php');
 
 Database::DBConnect();
-$id = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id = $_SESSION['id'];
+}
 $crs_id = safeGet('crs_id');
 $course = new Courses($crs_id);
 $user = new User($id);
@@ -28,8 +34,6 @@ $attendeces = Attendance::all_course($crs_id);
 
                     <form action="../../Controllers/saveAttendance.php" method="get">
                         <input type="hidden" name="crs_id" value="<?= $crs_id ?>">
-                        <input type="hidden" name="user_id" value="<?= $id ?>">
-
 
                         <div><button type="submit" class="btn btn-outline-success float-right" style="padding-left:50px ;padding-right: 50px;margin-bottom: 15px;">Save</button></div>
                         <div>

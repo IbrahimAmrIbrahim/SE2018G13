@@ -1,10 +1,17 @@
 <?php
+// Start the session
+session_start();
 
 include_once("../Controllers/common.php");
 include_once("../Models/Courses.php");
 
 Database::DBConnect();
-$user_id = safeGet("user_id", 0);
+
+if (!isset($_SESSION['id'])) {
+    header("Location: ../index.php?status=session_expired");
+} else {
+    $user_id = $_SESSION['id'];
+}
 $course_id = safeGet("course_id", 0);
 
 if ($course_id == 0) {
@@ -21,5 +28,5 @@ if ($course_id == 0) {
     $courses->save();
 }
 
-header('Location: ../View/teacher/Courses.php?id=' . $user_id);
+header('Location: ../View/teacher/Courses.php');
 ?>

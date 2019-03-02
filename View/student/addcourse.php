@@ -1,8 +1,15 @@
 <?php
+// Start the session
+session_start();
+
 include_once("../../Controllers/common.php");
 include_once('../../Models/user.php');
 Database::DBConnect();
-$id_user = safeGet('id');
+if (!isset($_SESSION['id'])) {
+    header("Location: ../../index.php?status=session_expired");
+} else {
+    $id_user = $_SESSION['id'];
+}
 $user = new User($id_user);
 ?>
 
@@ -32,7 +39,6 @@ $user = new User($id_user);
 
                     <form action="../../Controllers/addCoursetoStudent.php" class="form-inline" method="get">
                         <div class="input-group" style="width: 100%">
-                            <input type="hidden" name="id" value="<?= $id_user ?>">
                             <input required class="form-control" id="SearchBox" type="text" name="crs_id" placeholder="Course ID" aria-label="Search">
                             <div class="input-group-append">
                                 <button  style="padding-left:50px ;padding-right: 50px" class="button " type="Add">Add</button>
